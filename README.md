@@ -1,3 +1,7 @@
+![svg](https://img.shields.io/badge/-Next.js-333.svg?logo=next.js&style=flat)
+![svg](https://img.shields.io/badge/license-MIT-blue.svg)
+
+
 # syarstar-next
 ![png](https://syarstar.net/img/logo.png)
 
