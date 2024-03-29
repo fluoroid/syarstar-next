@@ -6,7 +6,7 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 
 import { Html, Head, Main, NextScript } from "next/document";
 
-export default function Document() {
+const Document = () => {
   return (
     <Html lang="ja">
       <Head />
@@ -17,3 +17,5 @@ export default function Document() {
     </Html>
   );
 }
+
+export default Document;

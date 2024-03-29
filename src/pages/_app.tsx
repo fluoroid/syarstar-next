@@ -7,6 +7,8 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 import "@/styles/globals.scss";
 import type { AppProps } from "next/app";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+const App =({ Component, pageProps }: AppProps) => {
+  return <Component {...pageProps} {...pageInfo}/>;
 }
+
+export default App;
