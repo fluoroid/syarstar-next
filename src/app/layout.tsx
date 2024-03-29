@@ -5,10 +5,15 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 */
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { M_PLUS_Rounded_1c } from "next/font/google";
 import "./globals.scss";
 
-const inter = Inter({ subsets: ["latin"] });
+const mplus = M_PLUS_Rounded_1c({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-mplus",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,7 +27,7 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="ja">
-      <body className={inter.className}>{children}</body>
+      <body className={mplus.className}>{children}</body>
     </html>
   );
 };
