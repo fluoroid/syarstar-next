@@ -7,7 +7,7 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 import Image from "next/image";
 import styles from "./page.module.scss";
 
-export default function Home() {
+const Home = () => {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -98,4 +98,6 @@ export default function Home() {
       </div>
     </main>
   );
-}
+};
+
+export default Home;
