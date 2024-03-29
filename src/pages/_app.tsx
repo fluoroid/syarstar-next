@@ -7,6 +7,10 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 import "@/styles/globals.scss";
 import type { AppProps } from "next/app";
 
+const pageInfo: { siteTitle: string } = {
+  siteTitle: "眠星観測所"
+}
+
 const App =({ Component, pageProps }: AppProps) => {
   return <Component {...pageProps} {...pageInfo}/>;
 }
