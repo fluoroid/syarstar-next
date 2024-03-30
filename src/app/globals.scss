@@ -40,8 +40,8 @@ body {
   grid-template:
     "mHead" var(--logo-height)
     "main" 1fr
-    "mFoot" 50px
-    "...." 24px;
+    "mFoot" 32px
+    "...." 60px;
 }
 
 main {
@@ -57,11 +57,8 @@ aside {
     display: none;
   }
   ul {
-    display: flex;
     list-style: none;
-    li {
-      flex: 1;
-    }
+    display: flex;
   }
 }
 
@@ -100,7 +97,6 @@ a {
       height: 100%;
       li {
         flex: 0;
-        padding: 5px;
       }
     }
   }

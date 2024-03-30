@@ -1,0 +1,58 @@
+/*! 
+Copyright (c) 2024 Fluoroid (Syar Star Observatory)
+This software is released under the MIT License, see LICENSE.
+This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 License, see LICENSE.
+*/
+
+.nav {
+  ul {
+    a {
+      flex: 1;
+    }
+    li {
+      background-color: #ffffff;
+      border-top: 1.5px solid #594843;
+      text-align: center;
+    }
+  }
+}
+
+.navIcon {
+  display: block;
+  margin: 0 auto;
+}
+
+.navText {
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
+/* 【PC用】 */
+@media (min-width: 750px) {
+  .nav {
+    ul {
+      a {
+        flex: 0;
+      }
+      li {
+        border: 1.5px solid #594843;
+        border-bottom-right-radius: 100px;
+        border-top-right-radius: 100px;
+        text-align: left;
+        position: relative;
+        width: calc(100% + 20px);
+        left: -20px;
+        padding: 5px 5px 5px 30px;
+      }
+    }
+  }
+  .navIcon {
+    display: inline;
+  }
+  .navText {
+    font-size: 24px;
+    position: relative;
+    top: -6px;
+    margin-left: 10px;
+  }
+}

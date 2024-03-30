@@ -10,8 +10,18 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 }
 
 .header {
-  background-color: #00ffff;
-  border-bottom: 2px solid #594843;
-  border-right: 2px solid #594843;
+  background-color: #ffffff;
+  border-left: 1.5px solid #594843;
+  border-bottom: 1.5px solid #594843;
+  border-right: 1.5px solid #594843;
+  border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+/* 【PC用】 */
+@media (min-width: 750px) {
+  .header {
+    border-left: none;
+    border-bottom-left-radius: 0;
+  }
 }

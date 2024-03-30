@@ -80,15 +80,7 @@ const RootLayout = ({
         <Header />
         <aside>
           <Header />
-          <nav>
-            <ul>
-              <li>About</li>
-              <li>Discover</li>
-              <li>うちの子</li>
-              <li>作品</li>
-              <li>リンク</li>
-            </ul>
-          </nav>
+          <Nav />
           <Footer />
         </aside>
         {children}
