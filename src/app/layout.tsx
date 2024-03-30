@@ -6,7 +6,7 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 
 import type { Metadata } from "next";
 import { M_PLUS_Rounded_1c } from "next/font/google";
-import "./globals.scss";
+import "@/app/globals.scss";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 const mplus = M_PLUS_Rounded_1c({
@@ -70,7 +70,24 @@ const RootLayout = ({
         <meta name="format-detection" content="telephone=no" />
         <meta name="apple-mobile-web-app-title" content="眠星観測所" />
       </head>
-      <body className={mplus.className}>{children}</body>
+      <body className={mplus.className}>
+        <Header />
+        <aside>
+          <Header />
+          <nav>
+            <ul>
+              <li>About</li>
+              <li>Discover</li>
+              <li>うちの子</li>
+              <li>作品</li>
+              <li>リンク</li>
+            </ul>
+          </nav>
+          <Footer />
+        </aside>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 };
