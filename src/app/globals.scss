@@ -46,7 +46,6 @@ body {
 
 main {
   grid-area: "main";
-  height: 2000px;
 }
 
 aside {
@@ -80,6 +79,7 @@ a {
     }
   }
   main {
+    min-height: 100vh;
     padding-left: var(--sidebar-width);
   }
   aside {
