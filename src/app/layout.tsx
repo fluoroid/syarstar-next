@@ -10,7 +10,9 @@ import "@/app/globals.scss";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Header } from "@/app/_components/Header/Header";
 import { Footer } from "@/app/_components/Footer/Footer";
+import Head from "next/head";
 
+// fonts
 const mplus = M_PLUS_Rounded_1c({
   weight: "400",
   subsets: ["latin"],
@@ -24,6 +26,7 @@ const description =
   "眠星観測所へようこそ。ふるおろいどの個人サイトです。のんびりお絵描きをしています。";
 const url = "https://syarstar.net/";
 export const metadata: Metadata = {
+  metadataBase: new URL("https://syarstar.net/"),
   title: {
     default: siteName,
     template: "%s | ${siteName}",
@@ -49,7 +52,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  metadataBase: new URL("https://syarstar.net/"),
   authors: {
     name: "Fluoroid",
   },
@@ -59,6 +61,7 @@ export const metadata: Metadata = {
   },
 };
 
+// 外枠
 const RootLayout = ({
   children,
 }: Readonly<{
@@ -66,12 +69,12 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="ja">
-      <head>
+      <Head>
         <GoogleAnalytics gaId="G-XYPRYB770Y" />
         <meta name="google" content="nositelinkssearchbox" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="apple-mobile-web-app-title" content="眠星観測所" />
-      </head>
+      </Head>
       <body className={mplus.className}>
         <Header />
         <aside>
