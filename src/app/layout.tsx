@@ -5,16 +5,17 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 */
 
 import type { Metadata } from "next";
-import { M_PLUS_Rounded_1c } from "next/font/google";
+import { M_PLUS_1 } from "next/font/google";
 import "@/app/globals.scss";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Header } from "@/app/_components/Header/Header";
 import { Footer } from "@/app/_components/Footer/Footer";
 import Head from "next/head";
+import { Nav } from "@/app/_components/Nav/Nav";
 
 // fonts
-const mplus = M_PLUS_Rounded_1c({
-  weight: "400",
+const mplus = M_PLUS_1({
+  weight: ["400", "500", "700", "800", "900"],
   subsets: ["latin"],
   display: "swap",
   variable: "--font-mplus",
