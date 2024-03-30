@@ -8,6 +8,8 @@ import type { Metadata } from "next";
 import { M_PLUS_Rounded_1c } from "next/font/google";
 import "@/app/globals.scss";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Header } from "@/app/_components/Header/Header";
+import { Footer } from "@/app/_components/Footer/Footer";
 
 const mplus = M_PLUS_Rounded_1c({
   weight: "400",
