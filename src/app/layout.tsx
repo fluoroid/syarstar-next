@@ -20,33 +20,41 @@ const mplus = M_PLUS_1({
   variable: "--font-mplus",
 });
 
-// metadata
-const siteName = "眠星観測所";
-const description =
-  "眠星観測所へようこそ。ふるおろいどの個人サイトです。のんびりお絵描きをしています。";
-const url = "https://syarstar.net/";
+// Metadata
+export const siteName: string = "眠星観測所";
+const descriptionShort: string =
+  "眠星観測所へようこそ。ふるおろいどの個人サイトです。";
+const description: string = descriptionShort + "のんびりお絵描きをしています。";
+const url: string = "https://syarstar.net/";
+const twitterID: string = "@Fluoroid_AA";
 export const metadata: Metadata = {
   metadataBase: new URL("https://syarstar.net/"),
   title: {
     default: siteName,
-    template: "%s | ${siteName}",
+    template: "%s | " + siteName,
   },
-  description,
-  keywords: ["眠星観測所", "ふるおろいど", "ふるおろ", "百花", "二葉"],
+  description: description,
+  keywords: [siteName, "ふるおろいど", "ふるおろ", "百花", "二葉"],
   openGraph: {
     title: siteName,
-    description,
-    url,
-    siteName,
+    description: descriptionShort,
+    url: url,
+    siteName: siteName,
     locale: "ja_JP",
     type: "website",
+    images: {
+      url: "./opengraph-image.jpg",
+      type: "image/jpeg",
+      width: 1200,
+      height: 630,
+    },
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: siteName,
-    description,
-    site: "@Fluoroid_AA",
-    creator: "@Fluoroid_AA",
+    description: descriptionShort,
+    site: twitterID,
+    creator: twitterID,
   },
   robots: {
     index: true,
