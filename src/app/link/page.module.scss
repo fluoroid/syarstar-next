@@ -33,6 +33,22 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
   }
 }
 
+.linkIconsList {
+  padding: 10px;
+  a {
+    display: inline-block;
+    margin: 0 10px 0 0;
+  }
+  .linkIcon {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.balloon {
+  display: none;
+}
+
 /* 【PC用】 */
 @media (min-width: 750px) {
   .main {
@@ -57,6 +73,43 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
       margin: 10px 0;
       padding: 0px 10px;
       font-size: 1.2rem;
+    }
+  }
+  .linkIconsList {
+    a {
+      margin: 0 20px 0 0;
+      position: relative;
+      overflow: visible;
+    }
+    .linkIcon {
+      width: 64px;
+      height: 64px;
+      &:hover + div.balloon {
+        display: block;
+      }
+    }
+  }
+  .balloon {
+    display: none;
+    position: absolute;
+    top: 75px;
+    left: -5%;
+    padding: 2.5px 5px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 0.7rem;
+    line-height: 1.5em;
+    text-align: center;
+    border-radius: 5px;
+    &:after {
+      border-bottom: 10px solid rgba(0, 0, 0, 0.6);
+      border-left: 7.5px solid transparent;
+      border-right: 7.5px solid transparent;
+      top: -10px;
+      left: 40%;
+      content: "";
+      position: absolute;
     }
   }
 }
