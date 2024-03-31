@@ -21,10 +21,10 @@ const jsonLd = createBreadcrumbJsonLd([
 
 const Home = () => {
   return (
-    <main className={styles.main}>
+    <>
+      <main className={styles.main}>topmainです</main>
       <BreadCrumbMarkup data={jsonLd} />
-      mainです
-    </main>
+    </>
   );
 };
 

@@ -7,10 +7,9 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 import type { Metadata } from "next";
 import { M_PLUS_1 } from "next/font/google";
 import "@/app/globals.scss";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { Header } from "@/app/_components/Header/Header";
 import { Footer } from "@/app/_components/Footer/Footer";
-import Head from "next/head";
 import { Nav } from "@/app/_components/Nav/Nav";
 
 // fonts
@@ -56,7 +55,7 @@ export const metadata: Metadata = {
   authors: {
     name: "Fluoroid",
   },
-  creator: "眠星観測所",
+  creator: siteName,
   alternates: {
     canonical: url,
   },
@@ -70,12 +69,13 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="ja">
-      <Head>
+      <head>
         <GoogleAnalytics gaId="G-XYPRYB770Y" />
+        <GoogleTagManager gtmId="G-XYPRYB770Y" />
         <meta name="google" content="nositelinkssearchbox" />
         <meta name="format-detection" content="telephone=no" />
-        <meta name="apple-mobile-web-app-title" content="眠星観測所" />
-      </Head>
+        <meta name="apple-mobile-web-app-title" content={siteName} />
+      </head>
       <body className={mplus.className}>
         <Header />
         <aside>

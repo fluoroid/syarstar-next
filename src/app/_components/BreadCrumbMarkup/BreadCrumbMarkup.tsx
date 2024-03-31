@@ -32,13 +32,11 @@ interface Props {
 }
 export const BreadCrumbMarkup = (Props: Props) => {
   return (
-    <>
-      <Script
-        id="breadcrumb-jsonld"
-        type="application/ld+json"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(Props.data) }}
-      />
-    </>
+    <Script
+      id="breadcrumb-jsonld"
+      type="application/ld+json"
+      strategy="beforeInteractive"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(Props.data) }}
+    />
   );
 };
