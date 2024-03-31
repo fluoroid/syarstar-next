@@ -26,14 +26,6 @@ a:active {
   color: #00afec;
 }
 
-/* 外部リンク */
-a[target="_blank"]:after {
-  font-family: "Font Awesome 6 Free";
-  content: "\f35d";
-  margin: 0 4px;
-  font-size: 0.9em;
-}
-
 /* 選択 */
 ::selection {
   background: #a6b8ff;
