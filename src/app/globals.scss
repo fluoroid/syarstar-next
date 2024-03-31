@@ -14,6 +14,32 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
   --logo-height: 78px;
 }
 
+/* リンク色 */
+a,
+a:visited {
+  color: #0067ec;
+  font-weight: 800;
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  color: #00afec;
+}
+
+/* 外部リンク */
+a[target="_blank"]:after {
+  font-family: "Font Awesome 6 Free";
+  content: "\f35d";
+  margin: 0 4px;
+  font-size: 0.9em;
+}
+
+/* 選択 */
+::selection {
+  background: #a6b8ff;
+  color: var(--foreground-hex);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -32,7 +58,7 @@ body {
   width: 100%;
   font-family: var(--font-default);
   font-size: 1rem;
-  line-height: 1.5em;
+  line-height: 1.25em;
   text-decoration: none;
   color: var(--foreground-hex);
   background: var(--background-hex);
@@ -48,6 +74,20 @@ main {
   grid-area: "main";
 }
 
+h1 {
+  color: var(--foreground-hex);
+  font-weight: 800;
+}
+
+h2 {
+  color: var(--foreground-hex);
+  font-weight: 500;
+}
+
+ruby > rt {
+  font-size: 40%;
+}
+
 aside {
   position: fixed;
   bottom: 0;
@@ -59,25 +99,23 @@ aside {
   ul {
     list-style: none;
     display: flex;
+    a,
+    a:visited,
+    a:hover,
+    a:active {
+      color: var(--foreground-hex);
+    }
   }
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 /* 【PC用】 */
 @media (min-width: 750px) {
   body {
+    grid-template: "main" 1fr;
     header,
     footer {
       display: none;
     }
-  }
-  main {
-    min-height: 100vh;
-    padding-left: var(--sidebar-width);
   }
   aside {
     grid-area: "aside";
