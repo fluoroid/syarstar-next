@@ -7,7 +7,7 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 import type { Metadata } from "next";
 import { metadata } from "@/app/layout";
 import { siteName } from "@/app/layout";
-import styles from "@/app/legal/page.module.scss";
+import generalStyles from "@/app/general.module.scss";
 import ExternalLinkIcon from "@/app/_components/FontAwesome/FontAwesome";
 import {
   BreadCrumbMarkup,
@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const Legal = () => {
   return (
     <>
-      <main className={styles.main}>
+      <main className={generalStyles.main}>
         <h1>プライバシーポリシー</h1>
         <h2>アクセス解析ツールについて</h2>
         <p>

@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 import { metadata } from "@/app/layout";
 import { siteName } from "@/app/layout";
 import Image from "next/image";
-import styles from "@/app/about/page.module.scss";
+import generalStyles from "@/app/general.module.scss";
 import {
   BreadCrumbMarkup,
   createBreadcrumbJsonLd,
@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const About = () => {
   return (
     <>
-      <main className={styles.main}>
+      <main className={generalStyles.main}>
         <h1>
           <ruby>
             眠星<rp>(</rp>

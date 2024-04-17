@@ -8,6 +8,7 @@ import type { Metadata } from "next";
 import { metadata } from "@/app/layout";
 import { siteName } from "@/app/layout";
 import styles from "@/app/link/page.module.scss";
+import generalStyles from "@/app/general.module.scss";
 import ExternalLinkIcon from "@/app/_components/FontAwesome/FontAwesome";
 import {
   BreadCrumbMarkup,
@@ -54,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const LinkPage = () => {
   return (
     <>
-      <main className={styles.main}>
+      <main className={generalStyles.main}>
         <h1>リンク集</h1>
         <p>ここに書いてあるアカウント以外は私のものじゃないよ</p>
         <div className={styles.linkIconsList}>

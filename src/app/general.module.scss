@@ -17,6 +17,20 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
     line-height: 1.5rem;
     border-bottom: var(--foreground-hex) 1.5px dashed;
   }
+  h2 {
+    padding: 5px 10px 0;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+  }
+  p {
+    margin: 10px 0;
+    padding: 0px 10px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    &:last-of-type {
+      margin: 10px 0 20px;
+    }
+  }
   ul {
     li {
       font-size: 1rem;
@@ -44,6 +58,16 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
       padding: 30px 20px 10px;
       font-size: 2rem;
       line-height: 2rem;
+    }
+    h2 {
+      padding: 5px 10px 0;
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+    }
+    p {
+      margin: 10px 0;
+      padding: 0px 10px;
+      font-size: 1.2rem;
     }
     ul {
       li {
