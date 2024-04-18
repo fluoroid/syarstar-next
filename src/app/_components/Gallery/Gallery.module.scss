@@ -1,0 +1,215 @@
+/*! 
+Copyright (c) 2024 Fluoroid (Syar Star Observatory)
+This software is released under the MIT License, see LICENSE.
+This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 License, see LICENSE.
+*/
+
+div:has(.images) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px;
+  padding: 15px 0;
+}
+.images {
+  display: inline-block;
+  padding: 0;
+  width: min(29%, 150px);
+  aspect-ratio: 1 / 1;
+  position: relative;
+  line-height: 0;
+  cursor: pointer;
+  border-radius: 10%;
+  overflow: hidden;
+  .image {
+    object-fit: cover;
+  }
+  .plusButton {
+    display: none;
+  }
+}
+
+.category1 {
+  border: 3px #0067ec solid;
+}
+.category2 {
+  border: 3px #00ada9 solid;
+}
+.category3 {
+  border: 3px #e85298 solid;
+}
+
+.refineFilter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  margin: 0;
+  select,
+  button {
+    font-size: min(4vw, 16px);
+    border-radius: 10px;
+    border: 2px solid var(--foreground-hex);
+  }
+  select {
+    width: calc(100% - 20px);
+    padding: min(1.5vw, 5px) 1.5vw;
+    margin: 10px 20px;
+  }
+  button {
+    border: none;
+    margin: 0;
+    cursor: pointer;
+    padding: min(1.5vw, 5px) 1.5vw;
+    font-weight: 500;
+    &:nth-of-type(1) {
+      background: #c7b9b5;
+    }
+    &:nth-of-type(2) {
+      background: #a4c8f8;
+    }
+    &:nth-of-type(3) {
+      background: #96e3e0;
+    }
+    &:nth-of-type(4) {
+      background: #f6c0d9;
+    }
+    &.active {
+      &:nth-of-type(1) {
+        background: #594843 !important;
+        color: #ffffff !important;
+      }
+      &:nth-of-type(2) {
+        background: #0067ec !important;
+        color: #ffffff !important;
+      }
+      &:nth-of-type(3) {
+        background: #00ada9 !important;
+        color: #ffffff !important;
+      }
+      &:nth-of-type(4) {
+        background: #e85298 !important;
+        color: #ffffff !important;
+      }
+    }
+  }
+}
+
+.SNS_link {
+  position: relative;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.figCaption {
+  font-size: 13px !important;
+}
+
+a.externalLink {
+  color: #0067ec !important;
+  font-weight: 800;
+  text-decoration: none;
+  &:visited {
+    color: #0067ec !important;
+    font-weight: 800;
+    text-decoration: none;
+  }
+  &:hover,
+  &:active {
+    color: #00afec !important;
+  }
+}
+
+/* 【PC用】 */
+@media (min-width: 900px) {
+  div:has(.images) {
+    justify-content: left;
+  }
+  .images {
+    width: 150px;
+    height: 150px;
+    .plusButton {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      transition: 0.2s;
+      opacity: 0;
+      span {
+        color: #ffffff;
+        font-size: 45px;
+        font-weight: 400;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        transition: 0.2s;
+      }
+    }
+    &:hover .plusButton {
+      opacity: 1;
+      span {
+        top: 50%;
+      }
+    }
+  }
+  .category1 {
+    border: 3.5px #0067ec solid;
+  }
+  .category2 {
+    border: 3.5px #00ada9 solid;
+  }
+  .category3 {
+    border: 3.5px #e85298 solid;
+  }
+  .refineFilter {
+    justify-content: flex-start;
+    select,
+    button {
+      font-size: 20px;
+    }
+    select {
+      width: auto;
+      margin: 0 0 0 10px;
+    }
+    button {
+      padding: 5px 10px;
+      margin: 0 10px;
+      &:nth-of-type(1) {
+        &:hover {
+          background: #8f7c77;
+        }
+      }
+      &:nth-of-type(2) {
+        &:hover {
+          background: #4f96f2;
+        }
+      }
+      &:nth-of-type(3) {
+        &:hover {
+          background: #41c8c4;
+        }
+      }
+      &:nth-of-type(4) {
+        &:hover {
+          background: #ef87b7;
+        }
+      }
+    }
+  }
+
+  .SNS_link {
+    width: 28px;
+    height: 28px;
+  }
+
+  .figCaption {
+    font-size: 16px !important;
+  }
+}
