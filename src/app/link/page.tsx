@@ -14,7 +14,6 @@ import {
   BreadCrumbMarkup,
   createBreadcrumbJsonLd,
 } from "@/app/_components/BreadCrumbMarkup/BreadCrumbMarkup";
-import Link from "next/link";
 import Image from "next/image";
 
 // JSON-LD data
@@ -66,7 +65,7 @@ const LinkPage = () => {
           >
             <Image
               className={styles.linkIcon}
-              src="/img/Misskey_io.png"
+              src="/img/Misskey_io.webp"
               alt="icon"
               width={64}
               height={64}
@@ -85,7 +84,7 @@ const LinkPage = () => {
           >
             <Image
               className={styles.linkIcon}
-              src="/img/pixiv.png"
+              src="/img/pixiv.webp"
               alt="icon"
               width={64}
               height={64}

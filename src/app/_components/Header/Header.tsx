@@ -14,7 +14,7 @@ export const Header = () => {
       <Link href="./">
         <Image
           className={styles.logo}
-          src="/img/logo.png"
+          src="/img/logo.webp"
           alt="トップ"
           width={195}
           height={78}

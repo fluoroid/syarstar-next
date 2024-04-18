@@ -7,7 +7,6 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 import type { Metadata } from "next";
 import { metadata } from "@/app/layout";
 import { siteName } from "@/app/layout";
-import Image from "next/image";
 import generalStyles from "@/app/general.module.scss";
 import {
   BreadCrumbMarkup,
