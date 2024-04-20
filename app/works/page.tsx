@@ -5,15 +5,15 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 */
 
 import type { Metadata } from "next";
-import { metadata } from "@/app/layout";
-import { siteName } from "@/app/layout";
-import styles from "@/app/works/page.module.scss";
-import generalStyles from "@/app/general.module.scss";
-import { Gallery } from "@/app/_components/Gallery/Gallery";
+import { metadata } from "@/layout";
+import { siteName } from "@/layout";
+import styles from "@/works/page.module.scss";
+import generalStyles from "@/general.module.scss";
+import { Gallery } from "@/_components/Gallery/Gallery";
 import {
   BreadCrumbMarkup,
   createBreadcrumbJsonLd,
-} from "@/app/_components/BreadCrumbMarkup/BreadCrumbMarkup";
+} from "@/_components/BreadCrumbMarkup/BreadCrumbMarkup";
 
 // JSON-LD data
 const jsonLd = createBreadcrumbJsonLd([

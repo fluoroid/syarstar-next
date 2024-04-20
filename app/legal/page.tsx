@@ -5,14 +5,14 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 */
 
 import type { Metadata } from "next";
-import { metadata } from "@/app/layout";
-import { siteName } from "@/app/layout";
-import generalStyles from "@/app/general.module.scss";
-import ExternalLinkIcon from "@/app/_components/FontAwesome/FontAwesome";
+import { metadata } from "@/layout";
+import { siteName } from "@/layout";
+import generalStyles from "@/general.module.scss";
+import ExternalLinkIcon from "@/_components/FontAwesome/FontAwesome";
 import {
   BreadCrumbMarkup,
   createBreadcrumbJsonLd,
-} from "@/app/_components/BreadCrumbMarkup/BreadCrumbMarkup";
+} from "@/_components/BreadCrumbMarkup/BreadCrumbMarkup";
 import Link from "next/link";
 
 // JSON-LD data

@@ -6,11 +6,11 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 
 import type { Metadata } from "next";
 import { M_PLUS_1 } from "next/font/google";
-import "@/app/globals.scss";
+import "@/globals.scss";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
-import { Header } from "@/app/_components/Header/Header";
-import { Footer } from "@/app/_components/Footer/Footer";
-import { Nav } from "@/app/_components/Nav/Nav";
+import { Header } from "@/_components/Header/Header";
+import { Footer } from "@/_components/Footer/Footer";
+import { Nav } from "@/_components/Nav/Nav";
 
 // fonts
 const mplus = M_PLUS_1({

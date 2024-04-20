@@ -5,16 +5,16 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 */
 
 "use client";
-import styles from "@/app/_components/Gallery/Gallery.module.scss";
+import styles from "@/_components/Gallery/Gallery.module.scss";
 import Image from "next/image";
-import { ITEMS, captionType } from "@/app/_components/Gallery/items";
+import { ITEMS, captionType } from "@/_components/Gallery/items";
 import LightGallery from "lightgallery/react";
 import lgZoom from "lightgallery/plugins/zoom";
 import "lightgallery/scss/lightgallery.scss";
 import "lightgallery/scss/lg-zoom.scss";
 import { useCallback, useState } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import ExternalLinkIcon from "@/app/_components/FontAwesome/FontAwesome";
+import ExternalLinkIcon from "@/_components/FontAwesome/FontAwesome";
 
 // 絵を描いた年
 const drawYears: number[] = [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017];

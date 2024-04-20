@@ -5,11 +5,11 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 */
 
 import Image from "next/image";
-import styles from "@/app/page.module.scss";
+import styles from "@/page.module.scss";
 import {
   BreadCrumbMarkup,
   createBreadcrumbJsonLd,
-} from "@/app/_components/BreadCrumbMarkup/BreadCrumbMarkup";
+} from "@/_components/BreadCrumbMarkup/BreadCrumbMarkup";
 
 // JSON-LD data
 const jsonLd = createBreadcrumbJsonLd([
