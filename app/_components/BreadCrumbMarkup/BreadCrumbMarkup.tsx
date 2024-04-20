@@ -2,8 +2,8 @@
 https://qiita.com/kitao6/items/e66edc2704612098c129
 */
 
-import { BreadcrumbList, WithContext } from "schema-dts";
 import Script from "next/script";
+import { BreadcrumbList, WithContext } from "schema-dts";
 
 // JSON-LDの作成
 export type BreadcrumbItem = {

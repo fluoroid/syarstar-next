@@ -49,12 +49,12 @@ div:has(.images) {
   button {
     font-size: min(4vw, 16px);
     border-radius: 10px;
-    border: 2px solid var(--foreground-hex);
   }
   select {
     width: calc(100% - 20px);
     padding: min(1.5vw, 5px) 1.5vw;
     margin: 10px 20px;
+    border: 2px solid var(--foreground-hex);
   }
   button {
     border: none;

@@ -4,9 +4,9 @@ This software is released under the MIT License, see LICENSE.
 This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 License, see LICENSE.
 */
 
-import styles from "@/_components/Nav/Nav.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+import styles from "@/_components/Nav/Nav.module.scss";
 
 // ナビゲーションデータ
 type navItems = {
