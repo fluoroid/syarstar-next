@@ -5,7 +5,6 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 */
 
 import type { Metadata, ResolvingMetadata } from "next";
-import Image from "next/image";
 import type { MetaDataProps } from "@/_d/MetaData";
 import { siteName } from "@/layout";
 import {
@@ -13,8 +12,7 @@ import {
   createBreadcrumbJsonLd,
 } from "@/_components/BreadCrumbMarkup/BreadCrumbMarkup";
 import generalStyles from "@/general.module.scss";
-import styles from "@/works/page.module.scss";
-import { Gallery } from "@/_components/Gallery/Gallery";
+import { Uchinoko } from "@/_components/Uchinoko/Uchinoko";
 
 // JSON-LD data
 const jsonLd = createBreadcrumbJsonLd([
@@ -23,14 +21,14 @@ const jsonLd = createBreadcrumbJsonLd([
     title: "トップ",
   },
   {
-    pathname: "https://syarstar.net/works/",
-    title: "作品",
+    pathname: "https://syarstar.net/characters/",
+    title: "うちの子",
   },
 ]);
 
 // Metadata
 const siteData: MetaDataProps = {
-  params: { subTitle: "作品", url: "/works/" },
+  params: { subTitle: "うちの子", url: "/characters/" },
 };
 export const generateMetadata = async (
   { params }: MetaDataProps,
@@ -50,28 +48,16 @@ export const generateMetadata = async (
   };
 };
 
-// 最終更新日
-const lastModified: { year: number; month: number; day: number } = {
-  year: 2024,
-  month: 4,
-  day: 16,
-};
-
-const Works = () => {
+const Characters = () => {
   return (
     <>
       <main className={generalStyles.main}>
-        <h1>作品</h1>
-        <p>
-          最終更新日：{lastModified.year}/
-          {String(lastModified.month).padStart(2, "0")}/
-          {String(lastModified.day).padStart(2, "0")}
-        </p>
-        <Gallery />
+        <h1>うちの子</h1>
+        <Uchinoko />
       </main>
       <BreadCrumbMarkup data={jsonLd} />
     </>
   );
 };
 
-export default Works;
+export default Characters;

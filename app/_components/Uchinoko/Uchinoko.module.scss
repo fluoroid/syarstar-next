@@ -1,0 +1,111 @@
+/*! 
+Copyright (c) 2024 Fluoroid (Syar Star Observatory)
+This software is released under the MIT License, see LICENSE.
+This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 License, see LICENSE.
+*/
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.tabs {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+  flex-direction: row;
+  padding-inline-start: 0;
+  li.tabsList {
+    width: min(17.5vh, 17.5vw, 100px);
+    height: min(17.5vh, 17.5vw, 100px);
+    margin: 0;
+    display: block;
+    text-align: center;
+    position: relative;
+    line-height: 0;
+    background: rgba(234, 207, 199, 0.5);
+    border: #000000 2px solid;
+    border-radius: 50%;
+    overflow: hidden;
+    user-select: none;
+    cursor: pointer;
+    &:hover {
+      background: rgba(234, 207, 199, 1);
+    }
+  }
+  .active {
+    background: #594843 !important;
+  }
+  .uchinokoNav {
+    pointer-events: none;
+  }
+}
+
+.charawWindow {
+  margin-top: 10px;
+  line-height: 0;
+  max-height: min(75vh, 1020px);
+  display: flex;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  .uchinokoMain {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: min(75vh, 1020px);
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+.charaTerms {
+  display: block;
+  border: none;
+  font-size: min(4vw, 16px);
+  border-radius: 10px;
+  margin: 10px auto 10px;
+  cursor: pointer;
+  padding: min(1.5vw, 5px) 30px;
+  font-weight: 500;
+  background: #c7b9b5;
+}
+
+.tremsicons {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+/* 【タブレット・PC用】 */
+@media (min-width: 600px) {
+  .wrapper {
+    flex-direction: row;
+  }
+  .tabs {
+    flex: 0;
+    flex-direction: column;
+    justify-content: start;
+    li.tabsList {
+      margin: 5px 10px;
+    }
+  }
+  .charawWindow {
+    flex: 1;
+    margin-top: 0px;
+  }
+}
+
+/* 【PC用】 */
+@media (min-width: 900px) {
+  .charaTerms {
+    padding: 5px 30px;
+    margin: 30px auto 10px;
+    font-size: 24px;
+    &:hover {
+      background: #8f7c77;
+    }
+  }
+}

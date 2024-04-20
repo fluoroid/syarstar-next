@@ -95,6 +95,18 @@ div:has(.images) {
   }
 }
 
+.charaTerms {
+  display: block;
+  border: 2px #594843 solid;
+  font-size: min(4vw, 16px);
+  border-radius: 10px;
+  margin: -10px auto 10px;
+  cursor: pointer;
+  padding: min(1.5vw, 5px) 30px;
+  font-weight: 500;
+  background: hsl(44, 86%, 81%);
+}
+
 .SNS_link {
   position: relative;
   top: 5px;
@@ -201,6 +213,15 @@ a.externalLink {
           background: #ef87b7;
         }
       }
+    }
+  }
+
+  .charaTerms {
+    padding: 5px 30px;
+    margin: -10px 10px 10px;
+    font-size: 24px;
+    &:hover {
+      background: hsl(44, 86%, 63%);
     }
   }
 
