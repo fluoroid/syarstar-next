@@ -64,7 +64,7 @@ export const Gallery = () => {
       <h4 className={styles.figCaption}>
         {data.map((item) => {
           return (
-            <>
+            <span key={item.name}>
               {item.name}
               {item.title !== undefined ? (
                 <>
@@ -121,7 +121,7 @@ export const Gallery = () => {
                 ""
               )}
               &nbsp;
-            </>
+            </span>
           );
         })}
       </h4>
