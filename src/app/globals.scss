@@ -128,10 +128,11 @@ aside {
     ul {
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: flex-start;
       height: 100%;
       li {
         flex: 0;
+        margin: min(15px, 1vh) 0;
       }
     }
   }
