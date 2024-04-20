@@ -4,16 +4,16 @@ This software is released under the MIT License, see LICENSE.
 This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 License, see LICENSE.
 */
 
-import type { Metadata } from "next";
-import { metadata } from "@/layout";
+import type { Metadata, ResolvingMetadata } from "next";
+import type { MetaDataProps } from "@/_d/MetaData";
 import { siteName } from "@/layout";
-import styles from "@/works/page.module.scss";
-import generalStyles from "@/general.module.scss";
-import { Gallery } from "@/_components/Gallery/Gallery";
 import {
   BreadCrumbMarkup,
   createBreadcrumbJsonLd,
 } from "@/_components/BreadCrumbMarkup/BreadCrumbMarkup";
+import generalStyles from "@/general.module.scss";
+import { Gallery } from "@/_components/Gallery/Gallery";
+import { ModalWindow } from "@/_components/ModalWindow/ModalWindow";
 
 // JSON-LD data
 const jsonLd = createBreadcrumbJsonLd([
@@ -28,27 +28,26 @@ const jsonLd = createBreadcrumbJsonLd([
 ]);
 
 // Metadata
-type Props = {
-  params: { subTitle: string; url: string };
-};
-const siteData: Props = {
+const siteData: MetaDataProps = {
   params: { subTitle: "作品", url: "/works/" },
 };
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export const generateMetadata = async (
+  { params }: MetaDataProps,
+  parent: ResolvingMetadata
+): Promise<Metadata> => {
   params = siteData.params;
   return {
     title: params.subTitle,
     openGraph: {
-      ...metadata.openGraph,
+      ...(await parent).openGraph,
       title: params.subTitle + " | " + siteName,
       url: params.url,
     },
     alternates: {
-      ...metadata.alternates,
       canonical: params.url,
     },
   };
-}
+};
 
 // 最終更新日
 type modifyDate = {
