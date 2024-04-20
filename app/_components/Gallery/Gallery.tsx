@@ -9,7 +9,7 @@ import Image from "next/image";
 import { useCallback, useState } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import styles from "@/_components/Gallery/Gallery.module.scss";
-import ExternalLinkIcon from "@/_components/FontAwesome/FontAwesome";
+import { ExternalLinkIcon } from "@/_components/FontAwesome/FontAwesome";
 import LightGallery from "lightgallery/react";
 import lgZoom from "lightgallery/plugins/zoom";
 import "lightgallery/scss/lightgallery.scss";

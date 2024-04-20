@@ -13,7 +13,7 @@ import {
   createBreadcrumbJsonLd,
 } from "@/_components/BreadCrumbMarkup/BreadCrumbMarkup";
 import generalStyles from "@/general.module.scss";
-import ExternalLinkIcon from "@/_components/FontAwesome/FontAwesome";
+import { ExternalLinkIcon } from "@/_components/FontAwesome/FontAwesome";
 
 // JSON-LD data
 const jsonLd = createBreadcrumbJsonLd([
