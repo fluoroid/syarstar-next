@@ -14,6 +14,7 @@ import {
 } from "react";
 import styles from "@/_components/ModalWindow/ModalWindow.module.scss";
 import { CloseIcon } from "@/_components/FontAwesome/FontAwesome";
+import { useSpring, animated } from "@react-spring/web";
 
 type ModalWindowProps = {
   content: JSX.Element;
@@ -25,6 +26,9 @@ type ModalWindowProps = {
 
 export const ModalWindow = (props: ModalWindowProps) => {
   const [show, setShow] = useState(false);
+
+  // ポップアップのアニメーション
+  const stylesPopup = useSpring({ opacity: show ? 1 : 0, delay: 50 });
 
   useEffect(() => {
     setShow(props.show);
@@ -50,12 +54,12 @@ export const ModalWindow = (props: ModalWindowProps) => {
   if (show) {
     return (
       <div className={styles.overlay}>
-        <div className={styles.modalBody}>
+        <animated.div style={stylesPopup} className={styles.modalBody}>
           <div className={styles.content}>{props.content}</div>
           <button onClick={closeModal} className={styles.buttonOK}>
             <CloseIcon />
           </button>
-        </div>
+        </animated.div>
       </div>
     );
   }

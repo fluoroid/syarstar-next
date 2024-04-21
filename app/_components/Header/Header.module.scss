@@ -4,11 +4,6 @@ This software is released under the MIT License, see LICENSE.
 This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 License, see LICENSE.
 */
 
-.logo {
-  display: block;
-  margin: auto;
-}
-
 .header {
   background-color: #ffffff;
   border-left: 1.5px solid #594843;
@@ -18,10 +13,23 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
   border-bottom-right-radius: 10px;
 }
 
+.logo {
+  display: block;
+  margin: auto;
+}
+
 /* 【PC用】 */
 @media (min-width: 900px) {
   .header {
     border-left: none;
     border-bottom-left-radius: 0;
+    overflow: hidden;
+    &:hover .logo {
+      transform: rotate(1.25deg) scale(1.075);
+    }
+  }
+  .logo {
+    transform: scale(1);
+    transition: 0.2s ease-in-out;
   }
 }

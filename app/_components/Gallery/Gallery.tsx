@@ -6,7 +6,7 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 
 "use client";
 import Image from "next/image";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import styles from "@/_components/Gallery/Gallery.module.scss";
 import { ExternalLinkIcon } from "@/_components/FontAwesome/FontAwesome";
@@ -14,6 +14,7 @@ import LightGallery from "lightgallery/react";
 import lgZoom from "lightgallery/plugins/zoom";
 import "lightgallery/scss/lightgallery.scss";
 import "lightgallery/scss/lg-zoom.scss";
+import { useSpring, animated } from "@react-spring/web";
 import { ITEMS, captionType } from "@/_components/Gallery/items";
 import { ModalWindow } from "@/_components/ModalWindow/ModalWindow";
 
@@ -72,6 +73,18 @@ export const Gallery = () => {
   // モーダル
   const [modalShow, setModalShow] = useState(false);
 
+  // アニメーション
+  const [stylesPopup, startStylesPopup] = useSpring(() => ({
+    from: { opacity: 1, transform: "scale(1) rotateZ(0)" },
+  }));
+  const stylesPopupProps = useMemo(() => {
+    return {
+      from: { opacity: 0, transform: "scale(0.33) rotateZ(-60deg)" },
+      to: { opacity: 1, transform: "scale(1) rotateZ(0)" },
+      config: { tension: 130 },
+    };
+  }, []);
+
   // カテゴリーを確認し、SCSSクラスを返す
   const CategoryCheck = useCallback((category: number): string => {
     switch (category) {
@@ -86,12 +99,20 @@ export const Gallery = () => {
   }, []);
 
   // ソートボタン
-  const handleCategory = useCallback((n: number) => {
-    setActiveCategory(n);
-  }, []);
-  const handleYear = useCallback((e: any) => {
-    setActiveYear(e.target.value);
-  }, []);
+  const handleCategory = useCallback(
+    (n: number) => {
+      setActiveCategory(n);
+      startStylesPopup.start(stylesPopupProps);
+    },
+    [startStylesPopup, stylesPopupProps]
+  );
+  const handleYear = useCallback(
+    (e: any) => {
+      setActiveYear(e.target.value);
+      startStylesPopup.start(stylesPopupProps);
+    },
+    [startStylesPopup, stylesPopupProps]
+  );
 
   // captionの整形
   const MakeCaption = useCallback((data: captionType[]): string => {
@@ -229,8 +250,9 @@ export const Gallery = () => {
             (activeCategory === 0 || activeCategory === item.category)
           ) {
             return (
-              <a
+              <animated.a
                 key={item.id}
+                style={stylesPopup}
                 className={CategoryCheck(item.category)}
                 href={"/img/works/" + item.id + ".jpg"}
                 data-sub-html={
@@ -251,7 +273,7 @@ export const Gallery = () => {
                 <div className={styles.plusButton}>
                   <span>＋</span>
                 </div>
-              </a>
+              </animated.a>
             );
           }
           return null;

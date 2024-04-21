@@ -7,9 +7,20 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 div:has(.images) {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   gap: 10px;
-  padding: 15px 0;
+  padding: 15px 7.5px;
+  &::after {
+    content: "";
+    display: inline-block;
+    width: min(29%, 150px);
+  }
+  &::before {
+    content: "";
+    display: inline-block;
+    width: min(29%, 150px);
+    order: 1;
+  }
 }
 .images {
   display: inline-block;
@@ -49,6 +60,7 @@ div:has(.images) {
   button {
     font-size: min(4vw, 16px);
     border-radius: 10px;
+    text-align: center;
   }
   select {
     width: calc(100% - 20px);
@@ -185,6 +197,7 @@ a.externalLink {
     select,
     button {
       font-size: 20px;
+      text-align: initial;
     }
     select {
       width: auto;

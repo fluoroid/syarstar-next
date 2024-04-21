@@ -31,6 +31,7 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
     overflow: hidden;
     user-select: none;
     cursor: pointer;
+    transition: 0.4s;
     &:hover {
       background: rgba(234, 207, 199, 1);
     }
@@ -72,6 +73,10 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
   padding: min(1.5vw, 5px) 30px;
   font-weight: 500;
   background: #c7b9b5;
+  transition: 0.2s;
+  &:hover {
+    background: #8f7c77;
+  }
 }
 
 .tremsicons {
@@ -104,8 +109,5 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
     padding: 5px 30px;
     margin: 30px auto 10px;
     font-size: 24px;
-    &:hover {
-      background: #8f7c77;
-    }
   }
 }
