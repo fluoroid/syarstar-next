@@ -66,14 +66,9 @@ const Terms = () => {
 
 export const Gallery = () => {
   // カテゴリー
-  let [activeCategory, setActiveCategory] = useState([
-    true, // All
-    false, // Original
-    false, // Yosonoko
-    false, // Copyright
-  ]);
+  let [activeCategory, setActiveCategory] = useState(0);
   // 年
-  let [activeYear, setActiveYear] = useState(0);
+  let [activeYear, setActiveYear] = useState(drawYears[0]);
   // モーダル
   const [modalShow, setModalShow] = useState(false);
 
@@ -91,16 +86,9 @@ export const Gallery = () => {
   }, []);
 
   // ソートボタン
-  const handleCategory = useCallback(
-    (n: number) => {
-      setActiveCategory(
-        activeCategory.map((activeCategory, index) =>
-          index === n ? true : false
-        )
-      );
-    },
-    [activeCategory]
-  );
+  const handleCategory = useCallback((n: number) => {
+    setActiveCategory(n);
+  }, []);
   const handleYear = useCallback((e: any) => {
     setActiveYear(e.target.value);
   }, []);
@@ -184,25 +172,25 @@ export const Gallery = () => {
       <div className={styles.refineFilter}>
         <button
           onClick={() => handleCategory(0)}
-          className={activeCategory[0] ? styles.active : ""}
+          className={activeCategory === 0 ? styles.active : ""}
         >
           全て
         </button>
         <button
           onClick={() => handleCategory(1)}
-          className={activeCategory[1] ? styles.active : ""}
+          className={activeCategory === 1 ? styles.active : ""}
         >
           オリジナル
         </button>
         <button
           onClick={() => handleCategory(2)}
-          className={activeCategory[2] ? styles.active : ""}
+          className={activeCategory === 2 ? styles.active : ""}
         >
           よその子
         </button>
         <button
           onClick={() => handleCategory(3)}
-          className={activeCategory[3] ? styles.active : ""}
+          className={activeCategory === 3 ? styles.active : ""}
         >
           版権
         </button>
@@ -211,7 +199,6 @@ export const Gallery = () => {
           onChange={handleYear}
           className={styles.refineYear}
         >
-          <option value="0">全期間</option>
           {drawYears.map((item) => {
             return (
               <option key={item} value={item}>
@@ -238,8 +225,8 @@ export const Gallery = () => {
         {ITEMS.map((item) => {
           // カテゴリー一致のときのみ表示
           if (
-            (activeYear == 0 || activeYear == item.year) &&
-            (activeCategory[0] || activeCategory[item.category])
+            activeYear == item.year &&
+            (activeCategory === 0 || activeCategory === item.category)
           ) {
             return (
               <a

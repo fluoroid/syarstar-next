@@ -16,7 +16,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@next/third-parties": "14.0.5-canary.59",
     "lightgallery": "^2.7.2",
-    "next": "^14.2.1",
+    "next": "^14.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "schema-dts": "^1.1.2"
