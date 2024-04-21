@@ -22,12 +22,12 @@ const NAVITEMS: navItems[] = [
     src: "/img/star.png",
     text: "About",
   },
-  {
-    id: 2,
-    href: "",
-    src: "/img/star.png",
-    text: "Discover",
-  },
+  // {
+  //   id: 2,
+  //   href: "",
+  //   src: "/img/star.png",
+  //   text: "Discover",
+  // },
   {
     id: 3,
     href: "./characters",
