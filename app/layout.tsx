@@ -11,6 +11,7 @@ import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { Header } from "@/_components/Header/Header";
 import { Footer } from "@/_components/Footer/Footer";
 import { Nav } from "@/_components/Nav/Nav";
+import { TsParticles } from "@/_components/tsParticles/tsParticles";
 
 // fonts
 const mplus = M_PLUS_1({
@@ -93,6 +94,7 @@ const RootLayout = ({
         </aside>
         {children}
         <Footer />
+        <TsParticles />
       </body>
     </html>
   );
