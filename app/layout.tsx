@@ -84,6 +84,8 @@ const RootLayout = ({
         <meta name="google" content="nositelinkssearchbox" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="apple-mobile-web-app-title" content={siteName} />
+        <meta name="theme-color" content="#ffdf7f" />
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={mplus.className}>
         <Header />
