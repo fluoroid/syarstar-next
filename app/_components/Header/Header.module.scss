@@ -23,9 +23,16 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
   .header {
     border-left: none;
     border-bottom-left-radius: 0;
+    position: relative;
+    left: -15px;
+    top: -1.5px;
+    transition: 0.2s;
     overflow: hidden;
-    &:hover .logo {
-      transform: rotate(1.25deg) scale(1.075);
+    box-shadow: 2px 1px #594843;
+    width: calc(100% + 16px);
+    height: calc(100% + 1.5px);
+    &:hover {
+      left: -1px;
     }
   }
   .logo {

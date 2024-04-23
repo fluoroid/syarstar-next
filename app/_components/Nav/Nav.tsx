@@ -19,31 +19,31 @@ const NAVITEMS: navItems[] = [
   {
     id: 1,
     href: "./about",
-    src: "/img/star.webp",
+    src: "/img/nav/about.webp",
     text: "About",
   },
   // {
   //   id: 2,
   //   href: "",
-  //   src: "/img/star.webp",
+  //   src: "/img/nav/example.webp",
   //   text: "Discover",
   // },
   {
     id: 3,
     href: "./characters",
-    src: "/img/star.webp",
+    src: "/img/nav/characters.webp",
     text: "うちの子",
   },
   {
     id: 4,
     href: "./works",
-    src: "/img/star.webp",
+    src: "/img/nav/works.webp",
     text: "作品",
   },
   {
     id: 5,
     href: "./link",
-    src: "/img/star.webp",
+    src: "/img/nav/link.webp",
     text: "リンク",
   },
 ];
