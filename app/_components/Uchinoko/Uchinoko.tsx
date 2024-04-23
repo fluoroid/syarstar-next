@@ -135,7 +135,7 @@ const Terms = () => {
   const termsNum: number[] = [1, 2, 3, 4];
   return (
     <>
-      <h1>キャラ規約</h1>
+      <h1>うちの子規約</h1>
       <p>創作などにおける、うちの子とのおやくそくだよ</p>
       <p>
         {termsNum.map((item) => {
@@ -143,10 +143,10 @@ const Terms = () => {
             <Image
               key={item}
               className={styles.tremsicons}
-              src={"/img/characters/policy_" + item + ".webp"}
+              src={"/img/characters/terms/policy_" + item + ".webp"}
               alt="icon"
-              width={72}
-              height={72}
+              width={96}
+              height={96}
               priority
             />
           );
@@ -206,7 +206,7 @@ export const Uchinoko = () => {
         </div>
       </div>
       <button onClick={() => setModalShow(true)} className={styles.charaTerms}>
-        キャラ規約
+        うちの子規約
       </button>
       <ModalWindow
         content={Terms()}
