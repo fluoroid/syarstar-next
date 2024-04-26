@@ -323,7 +323,7 @@ export const TsParticles = () => {
           },
           limit: {
             mode: "delete",
-            value: 100,
+            value: 50,
           },
           value: 20,
         },

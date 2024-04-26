@@ -105,10 +105,12 @@ export const Gallery = () => {
   // ソートボタン
   const handleCategory = useCallback(
     (n: number) => {
-      setActiveCategory(n);
-      startStylesPopup.start(stylesPopupProps);
+      if (n !== activeCategory) {
+        setActiveCategory(n);
+        startStylesPopup.start(stylesPopupProps);
+      }
     },
-    [startStylesPopup, stylesPopupProps]
+    [startStylesPopup, stylesPopupProps, activeCategory]
   );
   const handleYear = useCallback(
     (e: any) => {
