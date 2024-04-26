@@ -4,13 +4,10 @@ This software is released under the MIT License, see LICENSE.
 This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 License, see LICENSE.
 */
 
-.loading {
-  margin: 10px 10px 10px;
-  overflow: hidden;
-}
+import styles from "@/loading.module.scss";
 
-@media (min-width: 900px) {
-  .loading {
-    margin: 15px 0 0 calc(30px + var(--sidebar-width));
-  }
-}
+const Loading = () => {
+  return <div className={styles.loading}>Loading...</div>;
+};
+
+export default Loading;

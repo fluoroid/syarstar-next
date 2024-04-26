@@ -23,9 +23,8 @@ const mplus = M_PLUS_1({
 
 // Metadata
 export const siteName: string = "眠星観測所";
-const descriptionShort: string =
-  "眠星観測所へようこそ。ふるおろいどの個人サイトです。";
-const description: string = descriptionShort + "のんびりお絵描きをしています。";
+const descriptionShort: string = "ふるおろいどの個人サイトです。";
+const description: string = descriptionShort + "";
 const url: string = "https://syarstar.net/";
 const twitterID: string = "@Fluoroid_AA";
 export const metadata: Metadata = {

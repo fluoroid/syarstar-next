@@ -1,0 +1,100 @@
+/*! 
+Copyright (c) 2024 Fluoroid (Syar Star Observatory)
+This software is released under the MIT License, see LICENSE.
+This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 License, see LICENSE.
+*/
+
+.main {
+  margin: 0;
+  background: none;
+  padding: 20px 0 0;
+  h1 {
+    padding: 15px 1em 10px;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    position: fixed;
+    z-index: 1;
+    --text-shadow-width: 5px;
+    --text-shadow-color: rgba(255, 255, 255, 0.5);
+    text-shadow:
+      var(--text-shadow-width) var(--text-shadow-width) var(--text-shadow-width)
+        var(--text-shadow-color),
+      calc(-1 * var(--text-shadow-width)) calc(-1 * var(--text-shadow-width))
+        var(--text-shadow-width) var(--text-shadow-color),
+      calc(-1 * var(--text-shadow-width)) var(--text-shadow-width)
+        var(--text-shadow-width) var(--text-shadow-color),
+      var(--text-shadow-width) calc(-1 * var(--text-shadow-width))
+        var(--text-shadow-width) var(--text-shadow-color),
+      var(--text-shadow-width) 0 var(--text-shadow-width)
+        var(--text-shadow-color),
+      calc(-1 * var(--text-shadow-width)) 0 var(--text-shadow-width)
+        var(--text-shadow-color),
+      0 var(--text-shadow-width) var(--text-shadow-width)
+        var(--text-shadow-color),
+      0 calc(-1 * var(--text-shadow-width)) var(--text-shadow-width)
+        var(--text-shadow-color);
+  }
+}
+
+.topImage {
+  position: relative;
+  margin: 0 auto;
+  width: min(100%, 2560px);
+  height: 200vw;
+  overflow: hidden;
+  .momoka {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vw;
+    z-index: 0;
+    .momokaImg {
+      pointer-events: none;
+      object-fit: contain;
+    }
+  }
+  .futaba {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    width: 100%;
+    height: 100vw;
+    z-index: 0;
+    .futabaImg {
+      pointer-events: none;
+      object-fit: contain;
+    }
+  }
+}
+
+.bottomElement {
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+}
+
+.loadingWrapper {
+  background-color: #ffdf7f;
+  position: fixed;
+  z-index: 100;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+/* 【PC用】 */
+@media (min-width: 900px) {
+  .main {
+    --main-margin-desktop: 20px;
+    h1 {
+      margin: 20px var(--main-margin-desktop) 20px
+        calc(var(--main-margin-desktop) + var(--sidebar-width));
+      padding: 30px 20px 10px;
+      font-size: 2.5rem;
+      line-height: 2.5rem;
+    }
+  }
+}
