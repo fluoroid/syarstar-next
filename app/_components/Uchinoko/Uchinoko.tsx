@@ -6,12 +6,13 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 
 "use client";
 import Image from "next/image";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import styles from "@/_components/Uchinoko/Uchinoko.module.scss";
 import { ModalWindow } from "@/_components/ModalWindow/ModalWindow";
+import { useSpring, animated } from "@react-spring/web";
 
 // うちの子表示データ
-type uchonokoData = {
+type uchonokoData = Readonly<{
   id: number;
   name: string;
   src: string;
@@ -24,7 +25,7 @@ type uchonokoData = {
     birth: { month: number; day: number };
     text: JSX.Element;
   };
-};
+}>;
 const UCHINOKO: uchonokoData[] = [
   {
     id: 0,
@@ -32,8 +33,8 @@ const UCHINOKO: uchonokoData[] = [
     src: "momoka",
     description: {
       name: "ももか",
-      subname: "桜木百花",
-      subnameEn: "Momoka Sakuragi",
+      subname: "桜木 百花",
+      subnameEn: "Sakuragi Momoka",
       age: 11,
       height: 138,
       birth: {
@@ -57,8 +58,8 @@ const UCHINOKO: uchonokoData[] = [
     src: "futaba",
     description: {
       name: "ふたば",
-      subname: "生更木二葉",
-      subnameEn: "Futaba Kisaragi",
+      subname: "生更木 二葉",
+      subnameEn: "Kisaragi Futaba",
       age: 11,
       height: 136,
       birth: {
@@ -84,8 +85,8 @@ const UCHINOKO: uchonokoData[] = [
     src: "meika",
     description: {
       name: "めいか",
-      subname: "灯星芽火",
-      subnameEn: "Meika Akariboshi",
+      subname: "灯星 芽火",
+      subnameEn: "Akariboshi Meika",
       age: 10,
       height: 132,
       birth: {
@@ -109,8 +110,8 @@ const UCHINOKO: uchonokoData[] = [
     src: "honomi",
     description: {
       name: "ほのみ",
-      subname: "月星帆之海",
-      subnameEn: "Honomi Tsukihoshi",
+      subname: "月星 帆之海",
+      subnameEn: "Tsukihoshi Honomi",
       age: 10,
       height: 136,
       birth: {
@@ -161,10 +162,106 @@ export const Uchinoko = () => {
   const [activeChara, setActiveChara] = useState(0);
   const [modalShow, setModalShow] = useState(false);
 
-  // キャラを変更
-  const changeCharacter = useCallback((id: number) => {
-    setActiveChara(id);
+  // アニメーション
+  const [stylesPopup, startStylesPopup] = useSpring(() => ({
+    from: { opacity: 1, transform: "scale(1)" },
+  }));
+  const stylesPopupProps = useMemo(() => {
+    return {
+      from: { opacity: 0, transform: "scale(0.5)" },
+      to: { opacity: 1, transform: "scale(1)" },
+      config: {
+        friction: 19,
+      },
+    };
   }, []);
+
+  // キャラを変更
+  const changeCharacter = useCallback(
+    (id: number) => {
+      if (id !== activeChara) {
+        setActiveChara(id);
+        startStylesPopup.start(stylesPopupProps);
+      }
+    },
+    [startStylesPopup, stylesPopupProps, activeChara]
+  );
+
+  // うちの子メイン画面
+  type CharacterMainProps = {
+    data: uchonokoData;
+  };
+  const CharacterMain = (props: CharacterMainProps) => {
+    return (
+      <div className={styles.charawWindow}>
+        <animated.div style={stylesPopup} className={styles.uchinokoWrapper}>
+          <div className={styles.uchinokoImg}>
+            <div className={styles.uchinokoDeco1}>
+              <Image
+                src={"/img/characters/deco" + props.data.id + ".webp"}
+                alt="アイコン"
+                fill
+                sizes="853px"
+                priority={false}
+              />
+            </div>
+            <div className={styles.uchinokoDeco2}>
+              <Image
+                src={"/img/characters/deco" + props.data.id + ".webp"}
+                alt="アイコン"
+                fill
+                sizes="853px"
+                priority={false}
+              />
+            </div>
+            <div className={styles.uchinokoDeco3}>
+              <Image
+                src={"/img/characters/deco" + props.data.id + ".webp"}
+                alt="アイコン"
+                fill
+                sizes="400px"
+                priority={false}
+              />
+            </div>
+            <Image
+              className={undefined}
+              src={"/img/characters/" + props.data.src + ".webp"}
+              alt={props.data.name}
+              fill
+              sizes="1920px"
+              priority
+            />
+          </div>
+          <div
+            className={`${styles.uchinokoDescription} ${styles["charaThemeColor" + props.data.id]}`}
+          >
+            <div className={styles.charaName}>
+              {props.data.description.name}
+            </div>
+            <div className={styles.charaSubName}>
+              <ruby>
+                ({props.data.description.subname}
+                <rp>(</rp>
+                <rt>{props.data.description.subnameEn}</rt>
+                <rp>)</rp>)
+              </ruby>
+            </div>
+            <div className={styles.charaStatus}>
+              <span>
+                {props.data.description.age}才　{props.data.description.height}{" "}
+                cm　
+                {props.data.description.birth.month}/
+                {props.data.description.birth.day}生
+              </span>
+            </div>
+            <div className={styles.charaDescription}>
+              {props.data.description.text}
+            </div>
+          </div>
+        </animated.div>
+      </div>
+    );
+  };
 
   return (
     <>
@@ -192,18 +289,7 @@ export const Uchinoko = () => {
             );
           })}
         </ul>
-        <div className={styles.charawWindow}>
-          <div className={styles.uchinokoMain}>
-            <Image
-              className={styles.uchinokoMainImg}
-              src={"/img/characters/" + UCHINOKO[activeChara].src + ".webp"}
-              alt={UCHINOKO[activeChara].name}
-              fill
-              sizes="1020px"
-              priority
-            />
-          </div>
-        </div>
+        <CharacterMain data={UCHINOKO[activeChara]} />
       </div>
       <button onClick={() => setModalShow(true)} className={styles.charaTerms}>
         うちの子規約

@@ -51,16 +51,168 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
   display: flex;
   justify-content: center;
   aspect-ratio: 1 / 1;
-  .uchinokoMain {
+  .uchinokoWrapper {
     display: block;
     position: relative;
-    width: 100%;
+    width: min(100%, 1500px);
     height: 100%;
-    max-width: min(75vh, 1020px);
-    img {
-      object-fit: contain;
+    max-width: 100%;
+    .uchinokoImg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      overflow: hidden;
+      img {
+        position: absolute;
+        padding: 0 0 0 20%;
+        pointer-events: none;
+        object-fit: contain;
+      }
+      .uchinokoDeco1 {
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        left: 35%;
+        top: 25%;
+        z-index: 0;
+        img {
+          margin: 0;
+          padding: 0;
+          pointer-events: none;
+          object-fit: contain;
+          animation: rotate_anime 30s linear infinite;
+        }
+      }
+      .uchinokoDeco2 {
+        position: absolute;
+        width: 30%;
+        height: 30%;
+        left: 5%;
+        top: 55%;
+        z-index: 0;
+        img {
+          margin: 0;
+          padding: 0;
+          pointer-events: none;
+          object-fit: contain;
+          animation: rotate_anime2 20s linear infinite;
+        }
+      }
+      .uchinokoDeco3 {
+        position: absolute;
+        width: 20%;
+        height: 20%;
+        left: 15%;
+        top: 5%;
+        z-index: 0;
+        img {
+          margin: 0;
+          padding: 0;
+          pointer-events: none;
+          object-fit: contain;
+          animation: rotate_anime 10s linear infinite;
+        }
+      }
     }
   }
+}
+
+@keyframes rotate_anime {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate_anime2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.uchinokoDescription {
+  position: relative;
+  --text-shadow-width: 3px;
+  --text-margin-top: min(7.5vh, 40px);
+  --text-name-size: min(9vh, 10vw, 4rem);
+  --text-description-size: min(3.5vh, 4vw, 1.5rem);
+  --left-margin: 4vw;
+  text-shadow:
+    var(--text-shadow-width) var(--text-shadow-width) var(--text-shadow-width)
+      var(--text-shadow-color),
+    calc(-1 * var(--text-shadow-width)) calc(-1 * var(--text-shadow-width))
+      var(--text-shadow-width) var(--text-shadow-color),
+    calc(-1 * var(--text-shadow-width)) var(--text-shadow-width)
+      var(--text-shadow-width) var(--text-shadow-color),
+    var(--text-shadow-width) calc(-1 * var(--text-shadow-width))
+      var(--text-shadow-width) var(--text-shadow-color),
+    var(--text-shadow-width) 0 var(--text-shadow-width) var(--text-shadow-color),
+    calc(-1 * var(--text-shadow-width)) 0 var(--text-shadow-width)
+      var(--text-shadow-color),
+    0 var(--text-shadow-width) var(--text-shadow-width) var(--text-shadow-color),
+    0 calc(-1 * var(--text-shadow-width)) var(--text-shadow-width)
+      var(--text-shadow-color);
+
+  .charaName {
+    position: absolute;
+    top: var(--text-margin-top);
+    left: var(--left-margin);
+    font-size: var(--text-name-size);
+    font-weight: 800;
+  }
+  .charaSubName {
+    position: absolute;
+    top: calc(var(--text-margin-top) + 0.75 * var(--text-name-size));
+    left: var(--left-margin);
+    font-size: var(--text-description-size);
+    font-weight: 400;
+  }
+  .charaStatus {
+    position: absolute;
+    top: calc(
+      var(--text-margin-top) + var(--text-name-size) + 2.5 *
+        var(--text-description-size)
+    );
+    left: var(--left-margin);
+    font-size: var(--text-description-size);
+    font-weight: 400;
+  }
+  .charaDescription {
+    position: absolute;
+    top: calc(
+      var(--text-margin-top) + var(--text-name-size) + 4 *
+        var(--text-description-size)
+    );
+    left: var(--left-margin);
+    p {
+      font-size: min(var(--text-description-size));
+      padding: 0;
+      font-weight: 400;
+      line-height: min(var(--text-description-size));
+    }
+  }
+}
+
+.charaThemeColor0 {
+  color: #f3859a;
+  --text-shadow-color: #ffe1e6;
+}
+.charaThemeColor1 {
+  color: #7acc95;
+  --text-shadow-color: #ebffe1;
+}
+.charaThemeColor2 {
+  color: #f3c079;
+  --text-shadow-color: #fff8e1;
+}
+.charaThemeColor3 {
+  color: #7a9ccc;
+  --text-shadow-color: #e1eeff;
 }
 
 .charaTerms {
@@ -105,6 +257,24 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 
 /* 【PC用】 */
 @media (min-width: 900px) {
+  .uchinokoDescription {
+    --text-margin-top: min(5vh, 40px);
+    --text-name-size: min(7.5vh, 5vw, 4rem);
+    --text-description-size: min(3vh, 2vw, 1.5rem);
+    --left-margin: 2vw;
+    .charaName {
+      left: var(--left-margin);
+    }
+    .charaSubName {
+      left: var(--left-margin);
+    }
+    .charaStatus {
+      left: var(--left-margin);
+    }
+    .charaDescription {
+      left: var(--left-margin);
+    }
+  }
   .charaTerms {
     padding: 5px 30px;
     margin: 30px auto 10px;
