@@ -27,16 +27,15 @@ export const createBreadcrumbJsonLd = (
 };
 
 // <script>の出力
-type Props = {
+export const BreadCrumbMarkup = (props: {
   data: WithContext<BreadcrumbList>;
-};
-export const BreadCrumbMarkup = (Props: Props): JSX.Element => {
+}): JSX.Element => {
   return (
     <Script
       id="breadcrumb-jsonld"
       type="application/ld+json"
       strategy="beforeInteractive"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(Props.data) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(props.data) }}
     />
   );
 };

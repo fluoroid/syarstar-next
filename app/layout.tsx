@@ -74,7 +74,7 @@ const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) => {
+}>): JSX.Element => {
   return (
     <html lang="ja">
       <head>

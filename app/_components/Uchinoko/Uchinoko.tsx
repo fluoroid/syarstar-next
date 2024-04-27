@@ -188,10 +188,7 @@ export const Uchinoko = (): JSX.Element => {
   );
 
   // うちの子メイン画面
-  type CharacterMainProps = {
-    data: uchonokoData;
-  };
-  const CharacterMain = (props: CharacterMainProps): JSX.Element => {
+  const CharacterMain = (props: { data: uchonokoData }): JSX.Element => {
     return (
       <div className={styles.charawWindow}>
         <animated.div style={stylesPopup} className={styles.uchinokoWrapper}>

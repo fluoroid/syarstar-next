@@ -16,15 +16,13 @@ import styles from "@/_components/ModalWindow/ModalWindow.module.scss";
 import { CloseIcon } from "@/_components/FontAwesome/FontAwesome";
 import { useSpring, animated } from "@react-spring/web";
 
-type ModalWindowProps = {
+export const ModalWindow = (props: {
   content: JSX.Element;
   show: boolean;
   firstShow: boolean;
   setShow: Dispatch<SetStateAction<any>>;
   storage?: string;
-};
-
-export const ModalWindow = (props: ModalWindowProps): JSX.Element => {
+}): JSX.Element => {
   const [show, setShow] = useState(false);
 
   // ポップアップのアニメーション

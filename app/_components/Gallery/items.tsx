@@ -5,7 +5,7 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 */
 
 // ITEMSの型
-export type illustItems = {
+type illustItems = {
   id: number;
   year: number;
   category: number;
