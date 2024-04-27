@@ -27,10 +27,10 @@ export const createBreadcrumbJsonLd = (
 };
 
 // <script>の出力
-interface Props {
+type Props = {
   data: WithContext<BreadcrumbList>;
-}
-export const BreadCrumbMarkup = (Props: Props) => {
+};
+export const BreadCrumbMarkup = (Props: Props): JSX.Element => {
   return (
     <Script
       id="breadcrumb-jsonld"

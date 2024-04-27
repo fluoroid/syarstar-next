@@ -5,7 +5,7 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 */
 
 import Image from "next/image";
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata, NextPage, ResolvingMetadata } from "next";
 import type { MetaDataProps } from "@/_d/MetaData";
 import { siteName } from "@/layout";
 import {
@@ -50,7 +50,7 @@ export const generateMetadata = async (
   };
 };
 
-const LinkPage = () => {
+const LinkPage: NextPage = () => {
   return (
     <>
       <main className={generalStyles.main}>

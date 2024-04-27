@@ -24,7 +24,7 @@ type ModalWindowProps = {
   storage?: string;
 };
 
-export const ModalWindow = (props: ModalWindowProps) => {
+export const ModalWindow = (props: ModalWindowProps): JSX.Element => {
   const [show, setShow] = useState(false);
 
   // ポップアップのアニメーション
@@ -63,5 +63,5 @@ export const ModalWindow = (props: ModalWindowProps) => {
       </div>
     );
   }
-  return null;
+  return <></>;
 };

@@ -11,7 +11,7 @@ import styles from "@/_components/Footer/Footer.module.scss";
 const now = new Date();
 const year = now.getFullYear();
 
-export const Footer = () => {
+export const Footer = (): JSX.Element => {
   return (
     <footer className={styles.footer}>
       <p>&copy;{year} Syar Star Observatory</p>

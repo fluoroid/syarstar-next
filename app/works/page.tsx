@@ -4,8 +4,7 @@ This software is released under the MIT License, see LICENSE.
 This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 License, see LICENSE.
 */
 
-import type { Metadata, ResolvingMetadata } from "next";
-import Image from "next/image";
+import type { Metadata, NextPage, ResolvingMetadata } from "next";
 import type { MetaDataProps } from "@/_d/MetaData";
 import { siteName } from "@/layout";
 import {
@@ -13,7 +12,6 @@ import {
   createBreadcrumbJsonLd,
 } from "@/_components/BreadCrumbMarkup/BreadCrumbMarkup";
 import generalStyles from "@/general.module.scss";
-import styles from "@/works/page.module.scss";
 import { Gallery } from "@/_components/Gallery/Gallery";
 
 // JSON-LD data
@@ -57,7 +55,7 @@ const lastModified: { year: number; month: number; day: number } = {
   day: 16,
 };
 
-const Works = () => {
+const Works: NextPage = () => {
   return (
     <>
       <main className={generalStyles.main}>

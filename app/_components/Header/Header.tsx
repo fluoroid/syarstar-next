@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "@/_components/Header/Header.module.scss";
 
-export const Header = () => {
+export const Header = (): JSX.Element => {
   return (
     <header className={styles.header}>
       <Link href="./">

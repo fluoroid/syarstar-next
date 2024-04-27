@@ -48,7 +48,7 @@ const NAVITEMS: navItems[] = [
   },
 ];
 
-export const Nav = () => {
+export const Nav = (): JSX.Element => {
   return (
     <nav className={styles.nav}>
       <ul>

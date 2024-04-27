@@ -14,10 +14,10 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 
 config.autoAddCss = false;
 
-export const ExternalLinkIcon = () => {
+export const ExternalLinkIcon = (): JSX.Element => {
   return <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="1x" />;
 };
 
-export const CloseIcon = () => {
+export const CloseIcon = (): JSX.Element => {
   return <FontAwesomeIcon icon={faXmark} size="1x" />;
 };

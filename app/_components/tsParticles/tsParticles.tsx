@@ -11,7 +11,7 @@ import { type Container, type ISourceOptions } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 import styles from "@/_components/tsParticles/tsParticles.module.scss";
 
-export const TsParticles = () => {
+export const TsParticles = (): JSX.Element => {
   const [init, setInit] = useState(false);
 
   // tsparticlesの初期化

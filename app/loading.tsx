@@ -7,7 +7,7 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 import Image from "next/image";
 import styles from "@/loading.module.scss";
 
-const LoadingTop = () => {
+const LoadingTop = (): JSX.Element => {
   return (
     <div className={styles.loadingTop}>
       <div className={styles.starImg}>

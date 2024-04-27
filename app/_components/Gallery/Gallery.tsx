@@ -22,7 +22,7 @@ import { ModalWindow } from "@/_components/ModalWindow/ModalWindow";
 const drawYears: number[] = [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017];
 
 // 注意事項
-const Terms = () => {
+const Terms = (): JSX.Element => {
   const termsNum: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
   return (
     <>
@@ -69,7 +69,7 @@ const Terms = () => {
   );
 };
 
-export const Gallery = () => {
+export const Gallery = (): JSX.Element => {
   // カテゴリー
   let [activeCategory, setActiveCategory] = useState(0);
   // 年

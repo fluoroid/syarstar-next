@@ -13,7 +13,7 @@ import { isMobile } from "react-device-detect";
 import styles from "@/_components/TopPage/TopPage.module.scss";
 import LoadingTop from "@/loading";
 
-export const TopPage = () => {
+export const TopPage = (): JSX.Element => {
   // マウスの座標
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 

@@ -132,7 +132,7 @@ const UCHINOKO: uchonokoData[] = [
 ];
 
 // うちの子規約
-const Terms = () => {
+const Terms = (): JSX.Element => {
   const termsNum: number[] = [1, 2, 3, 4];
   return (
     <>
@@ -157,7 +157,7 @@ const Terms = () => {
   );
 };
 
-export const Uchinoko = () => {
+export const Uchinoko = (): JSX.Element => {
   // 年
   const [activeChara, setActiveChara] = useState(0);
   const [modalShow, setModalShow] = useState(false);
@@ -191,7 +191,7 @@ export const Uchinoko = () => {
   type CharacterMainProps = {
     data: uchonokoData;
   };
-  const CharacterMain = (props: CharacterMainProps) => {
+  const CharacterMain = (props: CharacterMainProps): JSX.Element => {
     return (
       <div className={styles.charawWindow}>
         <animated.div style={stylesPopup} className={styles.uchinokoWrapper}>

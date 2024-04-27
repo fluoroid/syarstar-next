@@ -4,7 +4,7 @@ This software is released under the MIT License, see LICENSE.
 This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 License, see LICENSE.
 */
 
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata, NextPage, ResolvingMetadata } from "next";
 import type { MetaDataProps } from "@/_d/MetaData";
 import { siteName } from "@/layout";
 import styles from "@/general.module.scss";
@@ -31,7 +31,7 @@ export const generateMetadata = async (
   };
 };
 
-const NotFound = () => {
+const NotFound: NextPage = () => {
   return (
     <main className={styles.main}>
       <h1>404 Not Found</h1>
