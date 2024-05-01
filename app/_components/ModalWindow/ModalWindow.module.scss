@@ -84,17 +84,20 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
   position: absolute;
   top: -18px;
   right: -18px;
-  padding: 10px 14px;
-  background: #594843 !important;
+  padding: 0;
+  width: 45px;
+  aspect-ratio: 1 / 1;
+  background-color: #594843 !important;
   color: #ffffff;
   &.active {
-    background: #c7b9b5 !important;
+    background-color: #c7b9b5 !important;
   }
-  border-radius: 50%;
+  border-radius: 100%;
   border: 2px solid #333333;
   cursor: pointer;
   font-weight: 500;
   font-size: 20px;
+  line-height: 0;
 }
 
 /* 【PC用】 */
@@ -143,7 +146,7 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
   }
   .buttonOK {
     &:hover {
-      background: #c7b9b5 !important;
+      background-color: #c7b9b5 !important;
     }
   }
 }
