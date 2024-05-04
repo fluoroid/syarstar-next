@@ -6,6 +6,7 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 import { M_PLUS_1 } from "next/font/google";
 import "@/globals.scss";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
@@ -97,6 +98,7 @@ const RootLayout = ({
         {children}
         <Footer />
         <TsParticles />
+        <Analytics />
         <SpeedInsights />
       </body>
     </html>
