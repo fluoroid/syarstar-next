@@ -7,7 +7,8 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
-import { M_PLUS_1 } from "next/font/google";
+import { NextFontWithVariable } from "next/dist/compiled/@next/font";
+import { M_PLUS_Rounded_1c } from "next/font/google";
 import "@/globals.scss";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { Header } from "@/_components/Header/Header";
@@ -16,7 +17,7 @@ import { Nav } from "@/_components/Nav/Nav";
 import { TsParticles } from "@/_components/tsParticles/tsParticles";
 
 // fonts
-const mplus = M_PLUS_1({
+const mplus: NextFontWithVariable = M_PLUS_Rounded_1c({
   weight: ["400", "500", "700", "800", "900"],
   subsets: ["latin"],
   display: "swap",
