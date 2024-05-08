@@ -14,28 +14,10 @@ import { Stage, Container } from "@pixi/react";
 import { getWindowSize } from "@/_hooks/GetWindowSize";
 import { SpineSmaple } from "@/_components/Spine/SpineContent";
 
-// Pixi.jsメインウインドウ
-const PixiApp = (): JSX.Element => {
+export const TopPage = (): JSX.Element => {
   // ウインドウサイズを取得
   const windowSize: twoDimension = getWindowSize();
 
-  return (
-    <Stage
-      width={windowSize.x}
-      height={windowSize.y}
-      options={{
-        backgroundColor: { r: 0, g: 0, b: 0 },
-        backgroundAlpha: 0,
-      }}
-    >
-      <Container>
-        <SpineSmaple windowSize={windowSize} />
-      </Container>
-    </Stage>
-  );
-};
-
-export const TopPage = (): JSX.Element => {
   // アニメーション
   const [stylesBlur, startStylesBlur] = useSpring(() => ({
     from: {
@@ -87,7 +69,19 @@ export const TopPage = (): JSX.Element => {
       <main className={styles.main}>
         <animated.h1 style={stylesBlur}>眠星観測所へようこそ</animated.h1>
         <div className={styles.topCanvas}>
-          <PixiApp />
+          {/* PixiApp */}
+          <Stage
+            width={windowSize.x}
+            height={windowSize.y}
+            options={{
+              backgroundColor: { r: 0, g: 0, b: 0 },
+              backgroundAlpha: 0,
+            }}
+          >
+            <Container>
+              <SpineSmaple windowSize={windowSize} />
+            </Container>
+          </Stage>
         </div>
       </main>
       <animated.div style={stylesWrapper} className={styles.loadingWrapper}>
