@@ -6,8 +6,11 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 
 .main {
   margin: 0;
+  padding: 0;
   background: none;
-  padding: 20px 0 0;
+  min-height: calc(100vh - var(--footer-height-mobile) - var(--header-height));
+  display: flex;
+  flex-direction: column;
   h1 {
     padding: 15px 1em 10px;
     font-size: 1.5rem;
@@ -36,42 +39,13 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
   }
 }
 
-.topImage {
-  position: relative;
-  margin: 0 auto;
-  width: min(100%, 2560px);
-  height: 200vw;
-  overflow: hidden;
-  .momoka {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vw;
-    z-index: 0;
-    .momokaImg {
-      pointer-events: none;
-      object-fit: contain;
-    }
+.topCanvas {
+  display: flex;
+  align-self: center;
+  margin: auto 0;
+  canvas {
+    touch-action: auto !important;
   }
-  .futaba {
-    position: absolute;
-    top: 25%;
-    left: 0;
-    width: 100%;
-    height: 100vw;
-    z-index: 0;
-    .futabaImg {
-      pointer-events: none;
-      object-fit: contain;
-    }
-  }
-}
-
-.bottomElement {
-  opacity: 0;
-  position: absolute;
-  bottom: 0;
 }
 
 .loadingWrapper {
@@ -89,6 +63,7 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 @media (min-width: 900px) {
   .main {
     --main-margin-desktop: 20px;
+    min-height: 100vh;
     h1 {
       margin: 20px var(--main-margin-desktop) 20px
         calc(var(--main-margin-desktop) + var(--sidebar-width));
