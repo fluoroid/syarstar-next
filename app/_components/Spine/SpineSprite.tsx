@@ -4,7 +4,6 @@ This software is released under the MIT License, see LICENSE.
 This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 License, see LICENSE.
 */
 
-"use client";
 import * as PIXI from "pixi.js";
 import { PixiComponent, applyDefaultProps } from "@pixi/react";
 import {
