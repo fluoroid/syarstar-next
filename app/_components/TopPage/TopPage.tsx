@@ -5,7 +5,7 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 */
 
 "use client";
-import { useEffect } from "react";
+import { useEffect, MouseEvent } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import styles from "@/_components/TopPage/TopPage.module.scss";
 import LoadingTop from "@/loading";
@@ -32,6 +32,11 @@ export const TopPage = (): JSX.Element => {
       zIndex: 100,
     },
   }));
+
+  // canvasの右クリック無効
+  const handleCanvasElement = (evt: MouseEvent<HTMLDivElement>) => {
+    evt.preventDefault();
+  };
 
   // マウント時の処理
   useEffect(() => {
@@ -68,7 +73,7 @@ export const TopPage = (): JSX.Element => {
     <>
       <main className={styles.main}>
         <animated.h1 style={stylesBlur}>眠星観測所へようこそ</animated.h1>
-        <div className={styles.topCanvas}>
+        <div className={styles.topCanvas} onContextMenu={handleCanvasElement}>
           {/* PixiApp */}
           <Stage
             width={windowSize.x}
