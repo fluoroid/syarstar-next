@@ -158,8 +158,9 @@ const Terms = (): JSX.Element => {
 };
 
 export const Uchinoko = (): JSX.Element => {
-  // 年
+  // 表示中のキャラ
   const [activeChara, setActiveChara] = useState(0);
+  // モーダルウインドウ
   const [modalShow, setModalShow] = useState(false);
 
   // アニメーション

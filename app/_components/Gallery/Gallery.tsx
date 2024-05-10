@@ -71,9 +71,9 @@ const Terms = (): JSX.Element => {
 
 export const Gallery = (): JSX.Element => {
   // カテゴリー
-  let [activeCategory, setActiveCategory] = useState(0);
+  const [activeCategory, setActiveCategory] = useState(0);
   // 年
-  let [activeYear, setActiveYear] = useState(drawYears[0]);
+  const [activeYear, setActiveYear] = useState(drawYears[0]);
   // モーダル
   const [modalShow, setModalShow] = useState(false);
 
@@ -122,73 +122,75 @@ export const Gallery = (): JSX.Element => {
 
   // captionの整形
   const MakeCaption = useCallback((data: captionType[]): string => {
-    let element: JSX.Element = (
-      <h4 className={styles.figCaption}>
-        {data.map((item) => {
-          return (
-            <span key={item.name}>
-              {item.name}
-              {item.title !== undefined ? (
-                <>
-                  &nbsp;
-                  <small>({item.title})</small>
-                </>
-              ) : (
-                ""
-              )}
-              {item.XLink !== undefined ? (
-                <>
-                  &nbsp;
-                  <a
-                    href={item.XLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.externalLink}
-                  >
-                    <Image
-                      className={styles.SNS_link}
-                      src="/img/X.webp"
-                      alt="X"
-                      width={32}
-                      height={32}
-                      priority
-                    />
-                    <ExternalLinkIcon />
-                  </a>
-                </>
-              ) : (
-                ""
-              )}
-              {item.ioLink !== undefined ? (
-                <>
-                  &nbsp;
-                  <a
-                    href={item.ioLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.externalLink}
-                  >
-                    <Image
-                      className={styles.SNS_link}
-                      src="/img/misskey_io.webp"
-                      alt="io"
-                      width={32}
-                      height={32}
-                      priority
-                    />
-                    <ExternalLinkIcon />
-                  </a>
-                </>
-              ) : (
-                ""
-              )}
-              &nbsp;
-            </span>
-          );
-        })}
-      </h4>
-    );
-    return renderToStaticMarkup(element);
+    const element = (): JSX.Element => {
+      return (
+        <h4 className={styles.figCaption}>
+          {data.map((item) => {
+            return (
+              <span key={item.name}>
+                {item.name}
+                {item.title !== undefined ? (
+                  <>
+                    &nbsp;
+                    <small>({item.title})</small>
+                  </>
+                ) : (
+                  ""
+                )}
+                {item.XLink !== undefined ? (
+                  <>
+                    &nbsp;
+                    <a
+                      href={item.XLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.externalLink}
+                    >
+                      <Image
+                        className={styles.SNS_link}
+                        src="/img/X.webp"
+                        alt="X"
+                        width={32}
+                        height={32}
+                        priority
+                      />
+                      <ExternalLinkIcon />
+                    </a>
+                  </>
+                ) : (
+                  ""
+                )}
+                {item.ioLink !== undefined ? (
+                  <>
+                    &nbsp;
+                    <a
+                      href={item.ioLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.externalLink}
+                    >
+                      <Image
+                        className={styles.SNS_link}
+                        src="/img/misskey_io.webp"
+                        alt="io"
+                        width={32}
+                        height={32}
+                        priority
+                      />
+                      <ExternalLinkIcon />
+                    </a>
+                  </>
+                ) : (
+                  ""
+                )}
+                &nbsp;
+              </span>
+            );
+          })}
+        </h4>
+      );
+    };
+    return renderToStaticMarkup(element());
   }, []);
 
   return (
