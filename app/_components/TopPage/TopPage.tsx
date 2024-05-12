@@ -5,7 +5,7 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 */
 
 "use client";
-import { useEffect, MouseEvent } from "react";
+import { useEffect, useLayoutEffect, MouseEvent } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import styles from "@/_components/TopPage/TopPage.module.scss";
 import LoadingTop from "@/loading";
@@ -13,6 +13,7 @@ import { twoDimension } from "@/_d/twoDimension";
 import { Stage, Container } from "@pixi/react";
 import { getWindowSize } from "@/_hooks/GetWindowSize";
 import { SpineSmaple } from "@/_components/Spine/SpineContent";
+import { LoadSprite } from "@/_hooks/LoadSprite";
 
 export const TopPage = (): JSX.Element => {
   // ウインドウサイズを取得
@@ -37,6 +38,11 @@ export const TopPage = (): JSX.Element => {
   const handleCanvasElement = (evt: MouseEvent<HTMLDivElement>) => {
     evt.preventDefault();
   };
+
+  // スプライトのロード
+  useLayoutEffect(() => {
+    LoadSprite();
+  }, []);
 
   // マウント時の処理
   useEffect(() => {

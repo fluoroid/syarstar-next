@@ -15,19 +15,14 @@ import { DrawX, DrawY, DrawScale } from "@/_hooks/Draw";
 // アニメーションのMixプロパティ
 const mixes: SpineMix[] = [
   {
-    from: "run",
-    to: "jump",
-    duration: 0.2,
+    from: "idle",
+    to: "wink",
+    duration: 0.1,
   },
   {
-    from: "jump",
-    to: "run",
-    duration: 0.4,
-  },
-  {
-    from: "walk",
-    to: "walk",
-    duration: 0.4,
+    from: "wink",
+    to: "idle",
+    duration: 0.1,
   },
 ];
 
@@ -44,32 +39,23 @@ export const SpineSmaple = (props: {
 
   // スプライト読み込み
   useEffect(() => {
-    PIXI.Assets.add({
-      alias: "spineboyData",
-      src: "./sprite/spineboy/spineboy-pro.skel",
-    });
-    PIXI.Assets.add({
-      alias: "spineboyAtlas",
-      src: "./sprite/spineboy/spineboy-pma.atlas",
-    });
-    PIXI.Assets.load(["spineboyData", "spineboyAtlas"]).then(() => {
-      setSpineData(Spine.from("spineboyData", "spineboyAtlas"));
+    PIXI.Assets.loadBundle("momoka").then(() => {
+      setSpineData(Spine.from("momokaData", "momokaAtlas"));
     });
   }, []);
 
   // 最初のアニメーションの設定
   const initAnime = useCallback((state: AnimationState) => {
     if (state) {
-      state.setAnimation(0, "run", true);
+      state.setAnimation(0, "idle", true);
     }
     setAnimationState(state);
   }, []);
 
-  // ジャンプ(動作検証用)
-  const jump = useCallback(() => {
+  // 瞬き(動作検証用)
+  const wink = useCallback(() => {
     if (animationState) {
-      animationState.setAnimation(0, "jump", false);
-      animationState.addAnimation(0, "run", true, 0);
+      animationState.setAnimation(1, "wink", false);
     }
   }, [animationState]);
 
@@ -79,11 +65,11 @@ export const SpineSmaple = (props: {
       <SpineSprite
         spineData={spineData.state.data.skeletonData}
         x={DrawX(50, props.windowSize)}
-        y={DrawY(100, props.windowSize)}
-        scale={DrawScale(0.5, props.windowSize)}
+        y={DrawY(87, props.windowSize)}
+        scale={DrawScale(0.33, props.windowSize)}
         eventMode="static"
         cursor="pointer"
-        pointerdown={jump}
+        pointerdown={wink}
         mixes={mixes}
         initialAnimation={initAnime}
       />
