@@ -1,6 +1,6 @@
 {
   "name": "syarstar-next",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "private": true,
   "description": "Next.jsベースの眠星観測所",
   "main": "page.tsx",
