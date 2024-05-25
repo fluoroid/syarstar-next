@@ -12,6 +12,7 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 
   --sidebar-width: 250px;
   --header-height: 78px;
+  --header-height-pc: 114.4px;
   --footer-height: 50px;
   --footer-height-mobile: calc(32px + 60px);
 }
@@ -129,7 +130,7 @@ aside {
     width: var(--sidebar-width);
     height: 100vh;
     display: grid;
-    grid-template: "head" var(--header-height) "nav" 1fr "foot" 50px;
+    grid-template: "head" var(--header-height-pc) "nav" 1fr "foot" 50px;
     header,
     footer {
       display: block;

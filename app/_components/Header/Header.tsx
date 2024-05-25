@@ -12,14 +12,16 @@ export const Header = (): JSX.Element => {
   return (
     <header className={styles.header}>
       <Link href="./">
-        <Image
-          className={styles.logo}
-          src="/img/logo.webp"
-          alt="トップ"
-          width={195}
-          height={78}
-          priority
-        />
+        <div className={styles.logoWrapper}>
+          <Image
+            className={styles.logo}
+            src="/img/logo.webp"
+            alt="トップ"
+            fill
+            sizes="195px"
+            priority
+          />
+        </div>
       </Link>
     </header>
   );
