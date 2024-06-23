@@ -4,7 +4,7 @@ This software is released under the MIT License, see LICENSE.
 This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 License, see LICENSE.
 */
 
-import { twoDimension } from "@/_d/twoDimension";
+import { Vec2 } from "@/_d/Vec2";
 
 /**
  * x座標の位置を計算
@@ -12,7 +12,7 @@ import { twoDimension } from "@/_d/twoDimension";
  * @param windowSize ウインドウサイズ
  * @returns 描画x座標
  */
-export const DrawX = (x: number, windowSize: twoDimension): number => {
+export const DrawX = (x: number, windowSize: Vec2): number => {
   return (windowSize.x * x) / 100;
 };
 
@@ -22,7 +22,7 @@ export const DrawX = (x: number, windowSize: twoDimension): number => {
  * @param windowSize ウインドウサイズ
  * @returns 描画y座標
  */
-export const DrawY = (y: number, windowSize: twoDimension): number => {
+export const DrawY = (y: number, windowSize: Vec2): number => {
   return (windowSize.y * y) / 100;
 };
 
@@ -32,6 +32,6 @@ export const DrawY = (y: number, windowSize: twoDimension): number => {
  * @param windowSize ウインドウサイズ
  * @returns 実際のサイズ
  */
-export const DrawScale = (scale: number, windowSize: twoDimension): number => {
+export const DrawScale = (scale: number, windowSize: Vec2): number => {
   return (scale * windowSize.y) / 1920;
 };

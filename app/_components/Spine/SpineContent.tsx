@@ -7,7 +7,7 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 "use client";
 import { useState, useEffect, useCallback } from "react";
 import { SpineMix, SpineSprite } from "@/_components/Spine/SpineSprite";
-import { twoDimension } from "@/_d/twoDimension";
+import { Vec2 } from "@/_d/Vec2";
 import { AnimationState, Spine } from "@esotericsoftware/spine-pixi";
 import * as PIXI from "pixi.js";
 import { DrawX, DrawY, DrawScale } from "@/_hooks/Draw";
@@ -27,9 +27,7 @@ const mixes: SpineMix[] = [
 ];
 
 // サンプルプログラム
-export const SpineSmaple = (props: {
-  windowSize: twoDimension;
-}): JSX.Element => {
+export const SpineSmaple = (props: { windowSize: Vec2 }): JSX.Element => {
   // Spineのデータ
   const [spineData, setSpineData] = useState<Spine | undefined>(undefined);
   // アニメーションの状態

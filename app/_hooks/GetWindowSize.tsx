@@ -6,7 +6,7 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 
 "use client";
 import { useEffect, useState } from "react";
-import { twoDimension } from "@/_d/twoDimension";
+import { Vec2 } from "@/_d/Vec2";
 
 // ヘッダーサイズ
 const HEADER_HEIGHT: Readonly<number> = 78;
@@ -16,7 +16,7 @@ const FOOTER_HEIGHT: Readonly<number> = 60 + 32;
  * ウインドウサイズを取得
  * @returns ウインドウサイズ
  */
-export const getWindowSize = (): twoDimension => {
+export const getWindowSize = (): Vec2 => {
   // ウインドウサイズを格納する
   const [windowSize, setWindowSize] = useState({
     x: 0,

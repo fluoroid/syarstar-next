@@ -9,7 +9,7 @@ import { useEffect, useLayoutEffect, MouseEvent } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import styles from "@/_components/TopPage/TopPage.module.scss";
 import LoadingTop from "@/loading";
-import { twoDimension } from "@/_d/twoDimension";
+import { Vec2 } from "@/_d/Vec2";
 import { Stage, Container } from "@pixi/react";
 import { getWindowSize } from "@/_hooks/GetWindowSize";
 import { SpineSmaple } from "@/_components/Spine/SpineContent";
@@ -17,7 +17,7 @@ import { LoadSprite } from "@/_hooks/LoadSprite";
 
 export const TopPage = (): JSX.Element => {
   // ウインドウサイズを取得
-  const windowSize: twoDimension = getWindowSize();
+  const windowSize: Vec2 = getWindowSize();
 
   // アニメーション
   const [stylesBlur, startStylesBlur] = useSpring(() => ({
