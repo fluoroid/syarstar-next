@@ -10,7 +10,7 @@ import { SpineMix, SpineSprite } from "@/_components/Spine/SpineSprite";
 import { Vec2 } from "@/_d/Vec2";
 import { AnimationState, Spine } from "@esotericsoftware/spine-pixi";
 import * as PIXI from "pixi.js";
-import { DrawX, DrawY, DrawScale } from "@/_hooks/Draw";
+import { DrawX, DrawY, DrawScale } from "@/_util/Draw";
 import { useTick } from "@pixi/react";
 
 // アニメーションのMixプロパティ

@@ -8,10 +8,6 @@ This website contents (docs, images...) are released under the CC BY-NC-ND 4.0 L
 import { useEffect, useState } from "react";
 import { Vec2 } from "@/_d/Vec2";
 
-// ヘッダーサイズ
-const HEADER_HEIGHT: Readonly<number> = 78;
-const FOOTER_HEIGHT: Readonly<number> = 60 + 32;
-
 /**
  * ウインドウサイズを取得
  * @returns ウインドウサイズ

@@ -12,7 +12,7 @@ import LoadingTop from "@/loading";
 import { Vec2 } from "@/_d/Vec2";
 import * as PIXI from "pixi.js";
 import { Stage, Container, Sprite, SimpleMesh, useTick } from "@pixi/react";
-import { getWindowSize } from "@/_hooks/GetWindowSize";
+import { getWindowSize } from "@/_util/GetWindowSize";
 import {
   Aitsu1,
   Aitsu2,
@@ -20,8 +20,8 @@ import {
   Futaba,
   Momoka,
 } from "@/_components/Spine/SpineContent";
-import { LoadSprite } from "@/_hooks/LoadSprite";
-import { DrawScale, DrawX, DrawY } from "@/_hooks/Draw";
+import { LoadSprite } from "@/_util/LoadSprite";
+import { DrawScale, DrawX, DrawY } from "@/_util/Draw";
 
 export const TopPage = (): JSX.Element => {
   // ウインドウサイズを取得

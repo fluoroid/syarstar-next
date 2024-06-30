@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/img/", "/img/*/", "/works/*/"],
+      disallow: ["/img/", "/sprite/"],
     },
     sitemap: "https://syarstar.net/sitemap.xml",
   };
