@@ -51,8 +51,8 @@ export const generateMetadata = async (
 // 最終更新日
 const lastModified: { year: number; month: number; day: number } = {
   year: 2024,
-  month: 4,
-  day: 16,
+  month: 7,
+  day: 1,
 };
 
 const Works: NextPage = () => {
