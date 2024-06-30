@@ -32,8 +32,11 @@ export const getWindowSize = (): Vec2 => {
         if (window.innerWidth > 2560) {
           x = 2560;
         }
-        // アスペクト比を常に2:3に
-        y = x * 1.5;
+        // アスペクト比を常に1:1に
+        if (x < 900) {
+          y -= 77 + 77;
+        }
+        x = y;
         setWindowSize({
           x: x,
           y: y,

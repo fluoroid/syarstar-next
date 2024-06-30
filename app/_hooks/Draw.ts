@@ -33,5 +33,9 @@ export const DrawY = (y: number, windowSize: Vec2): number => {
  * @returns 実際のサイズ
  */
 export const DrawScale = (scale: number, windowSize: Vec2): number => {
-  return (scale * windowSize.y) / 1920;
+  if (windowSize.y < windowSize.x) {
+    return (scale * windowSize.y) / 1080;
+  } else {
+    return (scale * windowSize.x) / 1920;
+  }
 };
