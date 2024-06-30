@@ -3,11 +3,11 @@
 
 # syarstar-next
 
-![png](https://syarstar.net/img/logo.png)
+![webp](https://syarstar.net/img/logo.webp)
 
 ## Overview (これはなに？)
 
-[眠星観測所](https://syarstar.net)をReact (Next.js)ベースに移行するために立ち上げたレポジトリだよ
+React (Next.js) 版の[眠星観測所](https://syarstar.net)のレポジトリだよ
 
 ## Requirement
 
@@ -15,18 +15,7 @@
 
 ## Features
 
-何か新しい仕様を実装したりしたらここに書き足していきます
-
-- 全般
-  - PWA (Progressive Web Apps)に対応。これでいつでも貴方にすやぁすたー( ˘ω˘ )
-    ~~(個人サイトでそれ必要ある？)~~
-  - クリックで星が増えるよ
-- うちの子
-  - 背景に若干のアニメーションを追加
-  - うちの子規約をモーダルウインドウ化
-- 作品
-  - 年別で分かれていたページを1ページに統合し、ページ内のソート機能で年別にフィルターできるようにした。
-  - 「絵に利用に関して」をモーダルウインドウ化し、そのセッションで初回アクセス時に画面に自動で表示するようにした。
+最新版以降に実装した内容をここに書きます
 
 ## Author
 
