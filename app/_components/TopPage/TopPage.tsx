@@ -217,10 +217,10 @@ const MeshShadow = (props: { windowSize: Vec2 }): JSX.Element => {
   // 描画
   return (
     <SimpleMesh
-      image="./img/top/shadow2.png"
+      image="./img/top/shadow2.webp"
       scale={DrawScale(0.95, props.windowSize)}
       x={DrawX(0, props.windowSize)}
-      y={DrawY(0, props.windowSize)}
+      y={DrawY(-2.5, props.windowSize)}
       uvs={state.uvs}
       vertices={state.vertices}
       indices={state.indices}
