@@ -129,7 +129,8 @@ aside {
     grid-area: "aside";
     position: fixed;
     width: var(--sidebar-width);
-    height: 100vh;
+    height: 100vh; // fallback
+    height: 100dvh;
     display: grid;
     grid-template: "head" var(--header-height-pc) "nav" 1fr "foot" 50px;
     header,
