@@ -1,5 +1,5 @@
 {
-  "regions": ["hnd1"],
   "framework": "nextjs",
-  "outputDirectory": "build"
+  "regions": ["hnd1"],
+  "trailingSlash": true
 }
