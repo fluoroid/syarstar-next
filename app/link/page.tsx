@@ -64,7 +64,7 @@ const LinkPage: NextPage = () => {
           >
             <Image
               className={styles.linkIcon}
-              src="/img/Misskey_io.webp"
+              src="/img/misskey_io.webp"
               alt="icon"
               width={64}
               height={64}
