@@ -87,7 +87,7 @@ const RootLayout = ({
         <meta name="format-detection" content="telephone=no" />
         <meta name="apple-mobile-web-app-title" content={siteName} />
         <meta name="theme-color" content="#ffdf7f" />
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="manifest" href="/manifest.webmanifest" />
       </head>
       <body className={mplus.className}>
         <Header />
