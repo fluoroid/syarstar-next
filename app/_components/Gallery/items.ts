@@ -21,6 +21,9 @@ export type captionType = {
 
 // データベース
 export const ITEMS: illustItems[] = [
+  { id: 271, year: 2024, category: 1, caption: false },
+  { id: 270, year: 2024, category: 1, caption: false },
+  { id: 269, year: 2024, category: 1, caption: false },
   {
     id: 268,
     year: 2024,
