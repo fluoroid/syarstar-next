@@ -12,7 +12,7 @@ import LoadingTop from "@/loading";
 import { Vec2 } from "@/_d/Vec2";
 import * as PIXI from "pixi.js";
 import { Stage, Container, Sprite, SimpleMesh, useTick } from "@pixi/react";
-import { getWindowSize } from "@/_util/GetWindowSize";
+import { useGetWindowSize } from "@/_util/useGetWindowSize";
 import {
   Aitsu1,
   Aitsu2,
@@ -25,7 +25,7 @@ import { DrawScale, DrawX, DrawY } from "@/_util/Draw";
 
 export const TopPage = (): JSX.Element => {
   // ウインドウサイズを取得
-  const windowSize: Vec2 = getWindowSize();
+  const windowSize: Vec2 = useGetWindowSize();
 
   // アニメーション
   const [stylesBlur, startStylesBlur] = useSpring(() => ({
@@ -82,7 +82,7 @@ export const TopPage = (): JSX.Element => {
         config: { friction: 50 },
       });
     }, 1000);
-  }, []);
+  }, []); // eslint-disable-line
 
   return (
     <>

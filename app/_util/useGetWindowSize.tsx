@@ -12,7 +12,7 @@ import { Vec2 } from "@/_d/Vec2";
  * ウインドウサイズを取得
  * @returns ウインドウサイズ
  */
-export const getWindowSize = (): Vec2 => {
+export const useGetWindowSize = (): Vec2 => {
   // ウインドウサイズを格納する
   const [windowSize, setWindowSize] = useState({
     x: 0,
