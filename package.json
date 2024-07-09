@@ -1,6 +1,6 @@
 {
   "name": "syarstar-next",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "private": true,
   "description": "Next.jsベースの眠星観測所",
   "main": "page.tsx",
@@ -19,8 +19,8 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
-    "@esotericsoftware/spine-core": "^4.2.48",
-    "@esotericsoftware/spine-pixi": "^4.2.48",
+    "@esotericsoftware/spine-core": "^4.2.56",
+    "@esotericsoftware/spine-pixi": "^4.2.56",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
@@ -28,9 +28,9 @@
     "@next/third-parties": "^14.2.4",
     "@pixi/react": "^7.1.2",
     "@react-spring/web": "^9.7.3",
-    "@tsparticles/engine": "^3.3.0",
+    "@tsparticles/engine": "^3.5.0",
     "@tsparticles/react": "^3.0.0",
-    "@tsparticles/slim": "^3.3.0",
+    "@tsparticles/slim": "^3.5.0",
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.12",
     "lightgallery": "^2.7.2",
@@ -42,7 +42,7 @@
     "schema-dts": "^1.1.2"
   },
   "devDependencies": {
-    "@types/node": "^20.14.9",
+    "@types/node": "^20.14.10",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
     "eslint": "~8",
@@ -51,6 +51,6 @@
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^3.3.2",
     "sass": "^1.77.6",
-    "typescript": "^5.5.2"
+    "typescript": "^5.5.3"
   }
 }
