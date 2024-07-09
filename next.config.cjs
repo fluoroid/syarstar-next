@@ -9,7 +9,6 @@ const nextConfig = {
     skipWaiting: true,
   },
   reactStrictMode: true,
-  trailingSlash: true,
 };
 
 module.exports = withPWA(nextConfig);

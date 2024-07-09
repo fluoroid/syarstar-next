@@ -18,18 +18,18 @@ import { ExternalLinkIcon } from "@/_components/FontAwesome/FontAwesome";
 // JSON-LD data
 const jsonLd = createBreadcrumbJsonLd([
   {
-    pathname: "https://syarstar.net/",
+    pathname: "https://syarstar.net",
     title: "トップ",
   },
   {
-    pathname: "https://syarstar.net/legal/",
+    pathname: "https://syarstar.net/legal",
     title: "Legal Info.",
   },
 ]);
 
 // Metadata
 const siteData: MetaDataProps = {
-  params: { subTitle: "Legal Info.", url: "/legal/" },
+  params: { subTitle: "Legal Info.", url: "/legal" },
 };
 export const generateMetadata = async (
   { params }: MetaDataProps,

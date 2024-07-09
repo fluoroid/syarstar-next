@@ -17,18 +17,18 @@ import { Gallery } from "@/_components/Gallery/Gallery";
 // JSON-LD data
 const jsonLd = createBreadcrumbJsonLd([
   {
-    pathname: "https://syarstar.net/",
+    pathname: "https://syarstar.net",
     title: "トップ",
   },
   {
-    pathname: "https://syarstar.net/works/",
+    pathname: "https://syarstar.net/works",
     title: "作品",
   },
 ]);
 
 // Metadata
 const siteData: MetaDataProps = {
-  params: { subTitle: "作品", url: "/works/" },
+  params: { subTitle: "作品", url: "/works" },
 };
 export const generateMetadata = async (
   { params }: MetaDataProps,

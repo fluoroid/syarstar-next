@@ -17,18 +17,18 @@ import { Uchinoko } from "@/_components/Uchinoko/Uchinoko";
 // JSON-LD data
 const jsonLd = createBreadcrumbJsonLd([
   {
-    pathname: "https://syarstar.net/",
+    pathname: "https://syarstar.net",
     title: "トップ",
   },
   {
-    pathname: "https://syarstar.net/characters/",
+    pathname: "https://syarstar.net/characters",
     title: "うちの子",
   },
 ]);
 
 // Metadata
 const siteData: MetaDataProps = {
-  params: { subTitle: "うちの子", url: "/characters/" },
+  params: { subTitle: "うちの子", url: "/characters" },
 };
 export const generateMetadata = async (
   { params }: MetaDataProps,

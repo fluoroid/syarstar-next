@@ -14,7 +14,7 @@ import { TopPage } from "@/_components/TopPage/TopPage";
 // JSON-LD data
 const jsonLd = createBreadcrumbJsonLd([
   {
-    pathname: "https://syarstar.net/",
+    pathname: "https://syarstar.net",
     title: "トップ",
   },
 ]);

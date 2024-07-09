@@ -16,18 +16,18 @@ import generalStyles from "@/general.module.scss";
 // JSON-LD data
 const jsonLd = createBreadcrumbJsonLd([
   {
-    pathname: "https://syarstar.net/",
+    pathname: "https://syarstar.net",
     title: "トップ",
   },
   {
-    pathname: "https://syarstar.net/about/",
+    pathname: "https://syarstar.net/about",
     title: "このサイトについて",
   },
 ]);
 
 // Metadata
 const siteData: MetaDataProps = {
-  params: { subTitle: "About", url: "/about/" },
+  params: { subTitle: "About", url: "/about" },
 };
 export const generateMetadata = async (
   { params }: MetaDataProps,
