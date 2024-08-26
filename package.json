@@ -19,22 +19,22 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
-    "@esotericsoftware/spine-core": "^4.2.56",
-    "@esotericsoftware/spine-pixi": "^4.2.56",
-    "@fortawesome/fontawesome-svg-core": "^6.5.2",
-    "@fortawesome/free-regular-svg-icons": "^6.5.2",
-    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@esotericsoftware/spine-core": "^4.2.58",
+    "@esotericsoftware/spine-pixi": "^4.2.58",
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-regular-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@next/third-parties": "^14.2.5",
+    "@next/third-parties": "^14.2.6",
     "@pixi/react": "^7.1.2",
-    "@react-spring/web": "^9.7.3",
+    "@react-spring/web": "^9.7.4",
     "@tsparticles/engine": "^3.5.0",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.5.0",
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.12",
     "lightgallery": "^2.7.2",
-    "next": "^14.2.5",
+    "next": "^14.2.6",
     "next-pwa": "^5.6.0",
     "pixi.js": "~7",
     "react": "^18.3.0",
@@ -42,15 +42,15 @@
     "schema-dts": "^1.1.2"
   },
   "devDependencies": {
-    "@types/node": "^20.14.10",
-    "@types/react": "^18.3.0",
+    "@types/node": "^22.5.0",
+    "@types/react": "^18.3.4",
     "@types/react-dom": "^18.3.0",
     "eslint": "~8",
-    "eslint-config-next": "^14.2.5",
+    "eslint-config-next": "^14.2.6",
     "patch-package": "^8.0.0",
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^3.3.3",
     "sass": "^1.77.8",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.4"
   }
 }
