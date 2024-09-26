@@ -1,4 +1,4 @@
-/*!
+/*
 https://qiita.com/kitao6/items/e66edc2704612098c129
 */
 
