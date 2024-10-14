@@ -22,24 +22,24 @@ const NAVITEMS: navItems[] = [
     src: "/img/nav/about.webp",
     text: "About",
   },
-  // {
-  //   id: 2,
-  //   href: "",
-  //   src: "/img/nav/example.webp",
-  //   text: "Discover",
-  // },
   {
-    id: 3,
+    id: 2,
     href: "./characters",
     src: "/img/nav/characters.webp",
     text: "うちの子",
   },
   {
-    id: 4,
+    id: 3,
     href: "./works",
     src: "/img/nav/works.webp",
     text: "作品",
   },
+  // {
+  //   id: 4,
+  //   href: "",
+  //   src: "/img/nav/example.webp",
+  //   text: "Discover",
+  // },
   {
     id: 5,
     href: "./link",

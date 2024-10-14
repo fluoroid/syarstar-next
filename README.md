@@ -3,7 +3,7 @@
 
 # syarstar-next
 
-![webp](https://syarstar.net/img/logo.webp)
+![webp](./public/img/logo.webp)
 
 ## Overview (これはなに？)
 

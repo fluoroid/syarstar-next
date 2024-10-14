@@ -36,10 +36,10 @@ export const ModalWindow = (props: {
       props.show === false &&
       props.storage !== undefined
     ) {
-      if (sessionStorage.getItem(props.storage) !== "true") {
+      if (localStorage.getItem(props.storage) !== "true") {
         props.setShow(true);
         setShow(true);
-        sessionStorage.setItem(props.storage, "true");
+        localStorage.setItem(props.storage, "true");
       }
     }
   }, [props]);
